@@ -1,0 +1,54 @@
+Chapter 1
+
+
+Compare and contrast data, databases, database (management) systems and information systems.
+Data: Facts that can be recorded and that have implicit meaning.
+Databases: Collection of related data with an implicit meaning. \
+More specifically, a database
+1)represents some aspect of the real world, sometimes called the miniworld or Universe of Discourse
+2) is a logically coherent collection of data with some inherent meaning
+3) is designed, built, and populated with data for a specific purpose
+Database management systems: A computerized system that enables users to create and maintain a database. It is a general-purpose software system that facilitates the processes of defining, constructing, manipulating, and sharing databases among various users and applications.
+Information systems: Consists of various computers, storage systems, application software, and databases.
+To summarize, data are facts that have implicit meaning stored in a database which is a collection of those facts. The DBS allows users to maintain the database and the IS department maintains the entire information system across computers and storage systems.
+
+
+Compare and contrast database systems with the following, using the main characteristics of the database approach in your discussion.
+- data structures and algorithms
+- traditional file systems
+Database systems vs. traditional file systems:
+- DBMS uses catalog to determine position of data as compared to a file-processing application which has the location of the data hard coded in the program
+- DBMS, unlike traditional file systems, had program-data independence. Changing the structure of a file does not necessitate changing all the programs that access that file.
+- DBMS provides support for multiple views of the data, unlike a file which provides all the data in one view
+- In a DBMS, there is less redundancy and data is normalized (i.e. only stored in one distinct place)
+Database systems vs. data structures and algorithms
+Though databases can have operations defined on them, these operations directly operate on the data. As compared to algorithms that may or may not directly operate on data.
+Datastructures are discarded once a program terminates where as data base systems offer persistent storage.
+
+
+Identify the stakeholders of database systems.
+- those associated with the DBMS software and system environment (DBMS system designers, tool developers, operators and maintenance personnel)
+- database administrators who administer both the database and DBMS
+- database designers who identify the data that should be stored in the database
+- end users who use the database for querying, updating & generating reports
+
+
+Chapter 2
+
+
+Explain the significance of the categories of data models. Which type of model is displayed in Figure 2.1?
+Data models are significant because they allow databases to be organized according to their description – allowing the appropriate description to be generated when needed. Figure 2.1 is most similar to a representational data model because, while it is somewhat similar to the way end users would perceive the data, it also not to far removed form the way the data would be organized in computer storage.
+Explain the structure and significance of the three-schema architecture.
+The structure of the three-schema architecture:
+- the internal level, the physical storage structure of the DB
+- conceptual level, focuses on describing entities, data types, relationships, user operations, and constraints. Structure of whole database for community of users.
+- external describes the part of the database for a particular group of users
+This structure is significant because it allows one to visualize each schema level individually and with the other levels. It also clearly separates each schema.
+Explain the tiers used in a typical web-based information system.
+Two-Tier: A query server with the query and transactioning functionality
+A API that allows the client programs to access the DBMS
+
+
+Three-Tier: The client program and database server along with the middle tier. The middle tier accepts requests from the client, processes it, and then sends requests to the database. It then passes the processed data back to the client.
+Contact GitHub API Training Shop Blog About
+© 2017 GitHub, Inc. Terms Privacy Security Status Help
