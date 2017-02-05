@@ -1,0 +1,34 @@
+1.	Chapter 5 (focus primarily on Sections 5.1–5.2)
+a.	Who invented the relational data model? When and where did they do their work?
+Tod Codd, a researcher at IBM, invented the relational data model.  His paper introducing it was introduced in 1970.  The implementation of the relation database became available in the 1980s.
+b.	Explain the following terms:
+i.	relation
+Is made up of a relation name R and a list of attributes.  An example a relation would be STUDENT
+ii.	attribute
+An attribute is the name of a role played by some domain D.  Examples of attributes would be Name, Ssn, Home_phone, Address etc.
+iii.	domain
+A set of values that are each indivisible as far as the relational model is concerned.  Each domain often has a logical definition and a data type or format.  I.e. it is a set of legal values that can be assigned to an attribute.
+iv.	n-tuple
+T is an ordered list of n values t=<v1, v2, …. vn> where each value vi 1<i<n is an element of dom (Ai) or is a special NULL value.
+In other words, a specific tuple t has n values and each value at I is either an element of the domain at i or NULL.
+v.	NULL value
+NULL is used to represent value that are unknown or do not apply.
+vi.	primary, foreign, candidate and super keys
+Super key: specifies a uniqueness constraint that no two distinct tuples in any state r of R can have the same value for SK.  In simpler terms, the combination of values for the attributes that make up the superkey for two different rows (tuples) should not be the same.
+Key: Similar to the super key, with the additional property that removing any attribute A from K leaves a set of attributes K’ that is not a super key for K anymore.  In other words, if there are attributes that are part of the superkey that are not necessary to make the superkey unique, then the superkey is not a key.
+Candidate key: the keys of a relational schema
+Primary key: One of the candidate keys – its value is used to identify tuples in the relation.
+Foreign key: A set of attributes FK in a relation schema r1 is a foreign key that references relation R2 if it satisfies these rules 1) the attributes of the foreign key have the same domains as the primary key attributes PK or R2 2)A value of FK in a tuple t1 is the primary key for tuple t2
+vii.	referenced and referencing records
+When a set of attributes FK in a relation schema R1 is the referencing relation which references the relation R2 which is the referenced relation.
+I.e. in the example with the EMPLOYEE and DEPARMENT, the department in which the employee works was the FK so EMPLOYEE was the referencing relation and DEPARMENT was the referenced relation.
+c.	Are tuples in a relation ordered? How about attribute values in a tuple? Explain why or why not.
+An n-tuple is an ordered list of values.  So yes, the values in a tuple are ordered.  
+Attribute values in a tuple are not ordered.  Here the attributes are mapped to the domains and each mapping is a tuple.  Each tuple is then considered a set where the name of the attribute appears with the value (i.e. it is self-describing data).    
+d.	Can attributes have multiple values in a single n-tuple? Why or why not?
+No, an attribute cannot have multiple values in a single n-tuple since each value is not divisible into components.
+2.	Chapter 6 (focus primarily on Sections 6.1–6.2 & 6.4) — Make sure that you know how to:
+a.	Create tables with specified constraints, including primary/foreign key, not-null, domain and value-check constraints.
+b.	Use the DML commands: INSERT, DELETE and UPDATE.
+c.	Distinguish the ON DELETE actions: SET NULL; CASCADE.
+
