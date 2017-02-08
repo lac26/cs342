@@ -1,0 +1,35 @@
+Exercise 2.13
+CLASS
+class_ID (PK)
+class_Name
+class_Credits
+class_Semester
+class_Synonym
+class_Title
+
+SCHEDULE
+Schedule_ID (PK)
+Schedule_Name
+Class_ID (FK)
+User_ID (FK)
+
+USER
+User_ID (PK)
+Schedule_ID (FK)
+Encrypted_Password
+User_Name
+College_Name (FK)
+
+COLLEGE
+College_Name (PK)
+Greeting_Text
+Class_ID (FK)
+
+CLASS_SECTION
+Class_Section (PK)
+Class_Room
+Class_Start
+Class_End
+Class_Prof
+Section_Letter
+Section_Class(FK)

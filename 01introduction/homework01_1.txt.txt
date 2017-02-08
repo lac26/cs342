@@ -1,0 +1,12 @@
+Exercise 1.4
+a) Major in Student
+Course_number and Department in Course
+Course_number in Section
+Course_number and Prerequisite_number in Prerequisite
+Thus, overall the columns that would need to change are: Major, Course_number, Department, and Prerequisite_number
+
+b) course section and prerequisite so only one column needs to be updated
+
+Course_number could always be a number, with out the name of the department in front of it. For example, instead of MATH2410 it would be simply 2410. The course name and the department could be a joint primary key.
+
+c) It would be possible to change just one field if there was another table labeled DEPARMENT_NAME which matched the department (in this case that would be CS) to its name (in this case that would be CSSE).
