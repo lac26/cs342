@@ -1,0 +1,18 @@
+1.
+This can be seen as a if/then statement:
+IF non null score
+THEN ensure has more than 1000 votes
+
+But can also be seen as a boolean statement:
+one of these statements needs to be true
+- score is null
+- has more than 1000 votes
+
+This could be expressed in SQL as (assuming there is a votes field):
+CHECK (score IS NULL OR votes>1000)
+
+2. Yes, perhaps different constrainst would have to be applied in different countries.  I.e. if the DB was being used in Europe for say a bar then the age constraint would be
+18 years from birth where in the U.S. it would be 21 years from birth.  Thus, the constraint could be turned on or off depending on the country context.
+There could also be a constraint about say the time of day something could happen and that constraint could be turned on or off depending on if it was summer (where it is light early)
+or winter (where it is light later).
+
