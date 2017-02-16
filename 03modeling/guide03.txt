@@ -1,0 +1,37 @@
+Compare and contrast the database and the software design processes. Are agile modeling practices applicable to database design as well?
+The database design process starts with requirement collection and analysis which allows the database designers to document the data requirement.  At the same time, the functional requirements are specified – there requirements reflect user defined operations of the database.
+After that, a high level conceptual schema for the database is created and the higher level user queries are specified.  Finally, the actual database is implemented.
+I would say database design is slightly different from the software design process because it is more difficult to be iterative.  Iterating on your database might actually require a complete reconstruction in a way that adding a feature to an application would not.  Thus, I would say agile practices are much less applicable to a database as compared to software design.
+
+
+ Explain the following terms: entities, relationships (including cardinality and participation constraints), attributes (simple, composite, multi-valued and derived).
+Entity: thing or object in the real world with an independent existence
+
+Attributes: particular properties that describe an entity
+Simple attribute: attributes that are not divisible
+Composite attributes: can be divided into smaller subparts
+Multivalued attributes: the attribute may have different numbers of values, there may be an upper and lower constraint
+Derived attributes: can be derived from a stored attribute
+
+Relationships: Each relationship instance in R is an association with exactly one entity from each participating entity type.  The cardinality relationship is the maximum number of relationship instances that an entity can participate in this could be 1:1, 1:N, N:1, or M:N.  The participation constraint is whether the existence of an entity depends on its relationship to another entity.  In the case of total participation, the total set of entities must relate to another entity type.  In the case of partial participation, only part of the set of entities must relate to the other entity type.
+
+
+Explain weak entities and identifying relationships.
+Weak entities are entities that do not have key attributes of their own.  Instead, they are identified via their relations to another entity type.  The relationship between the weak entity and the entity type it gets its key attribute from is called the identifying relationship.
+
+Model a person-household database (from class 2) using an ERD.
+(see attached image)
+
+Map the ERD model from above to a relational database model.
+(see attached image)
+
+Explain how to map from a UML model to a relational database model. We will address this issue more carefully in a later unit (on object-relational mapping).
+-	For all regular entity types, create a relation with all the simple attributes of the entity.
+For instance, I created the PERSON relation to correspond to the regular entity type PERSON.  Use simple components of composite attributes.
+
+-	For weak entity type, create a relation with all of its simple attributes in addition add a FK to the PK to the owner entity.
+For HOUSEHOLD a created a relation with all of the simple attributes of the weak entity type HOUSEHOLD but also added the FK referring to the owner (PERSON) PK.
+
+-	Depending on if the ERD model has 1:1 Relationship/1:N Relationship/M:N Relationship either link with foreign key or create relationship relation with two foreign keys.
+
+-	If there are multi-value attributes, create a new relation with a foreign key.
