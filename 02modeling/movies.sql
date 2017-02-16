@@ -5,9 +5,10 @@
 -- kvlinden
 
 -- Drop current database
-DROP TABLE Casting;
+
 DROP TABLE Movie;
 DROP TABLE Performer;
+DROP TABLE Casting;
 
 -- Create database schema
 CREATE TABLE Movie (
