@@ -134,4 +134,31 @@ INNER JOIN ORDER_ITEM ON ORDER_ITEM.OrderID = CUSTOMER_ORDER.ID
 INNER JOIN ITEM ON ORDER_ITEM.ITemID = ITEM.ID
 WHERE ITEM.name LIKE 'Happy-Go-Lucky Deoderant';
 
+/* Exercise 5.20 */
+/*
+It would not be advisable to replace the student ID number with a natural key.
+First of all, unless using the student ID assigned by Calvin upon admission, it could be difficult to find a natural key that would always be unique.  
+For instance, if the surrogate key was made up of where they were from, date of birth, name etc. it could be difficult to ensure uniqueness
+And, even if it was something that was seemingly unique, such as an email address that may need to change with the change of a name/the letters spelling inapporpriate email etc.
+Thus, to ensure that there would be no reason that the key would have to change and that it is unique, it would be safest to use a surrogate key.
+*/
+
+/* I created a status table.  The benefits of doing this is that if say, there is a new type of status, it is easy to simply update the status table instead of updating the check constraint.
+	This would also allow us to store additional information about the status if necessary.  The downside of this is that everytime the Casting table is used it must reference the status table.
+	For implementation see lab file.
+	*/
+
+
+/* 
+Lab exercise 2.3, see lab for implementation
+QS: a) Yes, I would make an additional sequence for the Performer primary keys.  I would prefer for the primary keys to continually be incremented by 1 and if both the Performer and the Movie
+are using the same primary key the primary key would not be increment by 1 in each individual table.  Also, if there is one sequence for each table, and I need to check the value of the 
+sequence for a particular table, it is more useful for the value of seq_movie to be the value of the the primary key only for the movie.
+
+b) No, if you use sequences this will allow you to use all of the values generated.  Also, if you are using the DDL command file to add primary keys to an existing database you should be careful
+that the START WITH value is correct.  For instance, if I created a seq_performer with START WITH 1 and added a new value into performer with the seq_performer then there would be two PK with 1s.  
+
+*/
+
+
 

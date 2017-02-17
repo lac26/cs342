@@ -11,8 +11,6 @@ DROP TABLE Movie;
 DROP TABLE Performer;
 DROP TABLE Status;
 
-DROP SEQUENCE seq_movie;
-
 
 -- Create database schema
 CREATE TABLE Movie (
@@ -50,18 +48,9 @@ CREATE TABLE Casting (
 	
 
 
-CREATE SEQUENCE seq_movie 
-MINVALUE 1 
-START WITH 1 
-INCREMENT BY 1 
-NOCACHE;
-
-	
 -- Load sample data
-
--- create sequence for movie
-INSERT INTO Movie VALUES (seq_movie.nextval,'Star Wars',1977,8.9);
-INSERT INTO Movie VALUES (seq_movie.nextval,'Blade Runner',1982,8.6);
+INSERT INTO Movie VALUES (1,'Star Wars',1977,8.9);
+INSERT INTO Movie VALUES (2,'Blade Runner',1982,8.6);
 
 INSERT INTO Performer VALUES (1,'Harrison Ford');
 INSERT INTO Performer VALUES (2,'Rutger Hauer');
@@ -77,14 +66,5 @@ INSERT INTO Casting VALUES (1,3,3);
 INSERT INTO Casting VALUES (2,1,1);
 INSERT INTO Casting VALUES (2,2,2);
 INSERT INTO Casting VALUES (2,4,2);
-
-/* QS: a) Yes, I would make an additional sequence for the Performer primary keys.  I would prefer for the primary keys to continually be incremented by 1 and if both the Performer and the Movie
-are using the same primary key the primary key would not be increment by 1 in each individual table.  Also, if there is one sequence for each table, and I need to check the value of the 
-sequence for a particular table, it is more useful for the value of seq_movie to be the value of the the primary key only for the movie.
-
-b) No, if you use sequences this will allow you to use all of the values generated.  Also, if you are using the DDL command file to add primary keys to an existing database you should be careful
-that the START WITH value is correct.  For instance, if I created a seq_performer with START WITH 1 and added a new value into performer with the seq_performer then there would be two PK with 1s.  
-
-*/
 
 
