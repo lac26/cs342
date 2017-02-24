@@ -38,12 +38,18 @@ The relationship can not be described consisely, i.e. this is not just a person 
 Team name might not be unique, what if there was 2 teams of elders meeting at different times?
 
  Why it is not well-designed(formally):
+ Functional dependencies:
  personID -> name, status, mentorID, mentorName, mentorStatus
  mentorID -> mentorName, mentorStatus
  teamName -> teamTime
+ personID, teamName -> teamRole
+ Candidate keys:
+ none, there are no unique keys
+ 
  Given the person ID, we know the status of the member and who the mentor is.
  Given the mentorID, we know the mentorName and mentorStatus.
  And, given the teamName, we know when the team meets.
+ And, when we know both the personID and the teamName, we know the teamRole.
  Thus the above are all functional dependencies.  
  However, neither personID nor mentorID nor teamName is a superkey.
  
