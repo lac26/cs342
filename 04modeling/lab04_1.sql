@@ -26,11 +26,13 @@ CREATE TABLE AltPerson (
 INSERT INTO AltPerson VALUES (0, 'Ramez', 'v', 1, 'Shamkant', 'm', 'elders', 'trainee', 'Monday');
 INSERT INTO AltPerson VALUES (1, 'Shamkant', 'm', NULL, NULL, NULL, 'elders', 'chair', 'Monday');
 INSERT INTO AltPerson VALUES (1, 'Shamkant', 'm', NULL, NULL, NULL, 'executive', 'protem', 'Wednesday');
+INSERT INTO AltPerson VALUES (4, 'Shamkant', 'm', NULL, NULL, NULL, 'executive', 'protem', 'Wednesday');
 INSERT INTO AltPerson VALUES (2, 'Jennifer', 'v', 3, 'Jeff', 'm', 'deacons', 'treasurer', 'Tuesday');
 INSERT INTO AltPerson VALUES (3, 'Jeff', 'm', NULL, NULL, NULL, 'deacons', 'chair', 'Tuesday');
 
 /* Exercise 4.1 
 Why it is not well-designed (informally): 
+Person can only have one mentor
 There are multiple entries for Shamkant.  He has two entries because he is part of two different teams.  
 The information that elders meet on Monday and deacons meet on Tuesday is repeated every time a new memeber is added to that team.  
 There are NULL values whenever there is not a mentee for mentorStatus and mentorName.
@@ -43,15 +45,20 @@ Team name might not be unique, what if there was 2 teams of elders meeting at di
  mentorID -> mentorName, mentorStatus
  teamName -> teamTime
  personID, teamName -> teamRole
- Candidate keys:
- none, there are no unique keys
+ 
+ 
+Candidate keys:
+ personID, teamName
+ 
  
  Given the person ID, we know the status of the member and who the mentor is.
  Given the mentorID, we know the mentorName and mentorStatus.
  And, given the teamName, we know when the team meets.
  And, when we know both the personID and the teamName, we know the teamRole.
  Thus the above are all functional dependencies.  
- However, neither personID nor mentorID nor teamName is a superkey.
+ However, neither personID nor mentorID nor teamName is a superkey
+ Because personID, mentorID and teamName are not superkeys this is not BCNF.
+ 
  
  Properly normalized schema for DB:
  Person(personID, name, status, mentorID where personID is a PK, mentorID is a FK to Person
