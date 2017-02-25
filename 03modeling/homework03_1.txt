@@ -1,0 +1,14 @@
+a) FLIGHT
+Made up of flight legs
+
+FLIGHT LEG
+Nonstop portion of the flght
+
+LEG_INSTANCE
+Occurrence of a LEG on a particular date
+
+From the diagram, it seems that each flight is made up of flight legs.  The flight and the flight legs that make it up are consistent over time.  The leg instance is an instance of a leg for a fight on a particular date.
+
+b) The underlined attributes are attributes of a weak entity that does not have a primary key off its own.  They uniquely identify the weak entity that is related to the owner entity.  Seat_no uniquely identifies the seat of a certain date of a leg_instance that is identified by the Leg_no.
+
+c) A seat must be for a particular leg of a flight on a a particular date hence the total participation.  It also makes sense that there are multiple seats for one reservation (i.e. one person could reserve seats for their family or friends) but one seat could not have multiple people reserving it.
