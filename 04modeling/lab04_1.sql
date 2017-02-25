@@ -60,9 +60,6 @@ Candidate keys:
  Because personID, mentorID and teamName are not superkeys this is not BCNF.  
  There is redundancy here because of repeated information.
  
-There is also a multivalue dependency 
- personName ->> personID | teamName
- personName is not a superkey so this is not 4NF.  This means this is redundancy of information in tuples.
  
  Properly normalized schema for DB:
  Person(personID, name, status, mentorID where personID is a PK, mentorID is a FK to Person
