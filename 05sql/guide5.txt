@@ -1,14 +1,12 @@
 Basic SQL (Section 6.3) — Review basic SQL as needed, then write sample queries that:
 
 Use one or more tuple variables (Section 6.3.2).
-
 SELECT P.firstName, P.lastName, C.status
 FROM Performer AS P, Casting AS C
 WHERE C.performerID = P.id AND P.firstName LIKE 'Harrison';
 
 
 Use one or more of the set operations, e.g., UNION, EXCEPT, INTERSECT (Section 6.3.4).
-
 All actors with the first name Rachael who are not stars:
 
 (SELECT P.firstName, P.lastName
@@ -23,19 +21,45 @@ WHERE C.performerID = P.id AND C.status = 'star'
 
 Advanced SQL (Sections 7.1.1–7.1.5) — This will include more new material; write sample queries that:
 
+
 Select based on a NULL field value (Section 7.1.1).
+SELECT id
+FROM Performer as P
+WHERE P.firstName IS NULL;
+
 
 Implement a nested sub-query, using [NOT] EXISTS, IN, ANY or ALL (Sections 7.1.2–7.1.4).
+
+retrieve name of each performer who is in movie past year 2000
+
+SELECT P.firstName, P.lastNamt
+FROM Performer as P
+WHERE P.id IN ( SELECT 	P.id
+				FROM Casting as C
+				WHERE P.id = C.movieID IN
+					( SELECT M.id
+					FROM Movie as M
+					WHERE M.id = C.id AND M.year > 2000
+					 )
+					);
+
+
+
 
 Implement a correlated sub-query (Section 7.1.3).
 
 
+//select all performers with a status of star
+SELECT P.id 
+FROM Performer as P, Casting as C
+WHERE P.id = C.performerID 
+	  AND C.status LIKE '%star%'
 
 
 
 
 
-table pulling from: 
+table to use as a reference:
 
 DROP TABLE Casting;
 DROP TABLE Movie;
