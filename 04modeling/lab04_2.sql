@@ -9,6 +9,7 @@
 
 DROP TABLE PersonTeam;
 DROP TABLE PersonVisit;
+DROP TABLE PersonTeamVisit;
 
 CREATE TABLE PersonTeam (
 	personName varchar(10),
@@ -30,6 +31,22 @@ INSERT INTO PersonVisit VALUES ('Shamkant', '1-MAR-2015');
 SELECT pt.personName, pt.teamName, pv.personVisit
 FROM PersonTeam pt, PersonVisit pv
 WHERE pt.personName = pv.personName;
+
+/* d Homework */
+CREATE TABLE PersonTeamVisit(
+	personName varchar(10),
+	teamName varchar (10),
+	personVisit date
+);
+
+INSERT INTO PersonTeamVisit 
+SELECT T.personName, T.teamName, V.personVisit 
+FROM PersonTeam T, PersonVisit V
+WHERE T.personName = V.personName;
+
+SELECT * FROM PersonTeamVisit;
+
+
 
 /*
 a)
