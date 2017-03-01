@@ -10,6 +10,9 @@
 -- kvlinden
 
 drop table AltPerson;
+drop table Person_Team;
+drop table Person;
+drop table Team;
 
 CREATE TABLE AltPerson (
 	personId integer,
@@ -29,6 +32,44 @@ INSERT INTO AltPerson VALUES (1, 'Shamkant', 'm', NULL, NULL, NULL, 'executive',
 INSERT INTO AltPerson VALUES (4, 'Shamkant', 'm', NULL, NULL, NULL, 'executive', 'protem', 'Wednesday');
 INSERT INTO AltPerson VALUES (2, 'Jennifer', 'v', 3, 'Jeff', 'm', 'deacons', 'treasurer', 'Tuesday');
 INSERT INTO AltPerson VALUES (3, 'Jeff', 'm', NULL, NULL, NULL, 'deacons', 'chair', 'Tuesday');
+
+
+/* c */ 
+
+
+CREATE TABLE Person(
+	personID integer PRIMARY KEY,
+	name varchar (10),
+	status char(1),
+	mentorID integer,
+	Foreign Key (mentorID) REFERENCES Person(personID) ON DELETE SET NULL
+);
+
+CREATE TABLE Team(
+	teamName varchar(10) PRIMARY KEY,
+	teamTime varchar (10)
+);
+
+CREATE TABLE Person_Team(
+	personID integer,
+	teamName varchar(10),
+	teamRole varchar(10),
+	Primary Key (personID, teamName),
+	Foreign Key (personID) REFERENCES Person(personID) ON DELETE CASCADE,
+	Foreign key (teamName) REFERENCES Team(teamName) ON DELETE CASCADE
+);
+
+INSERT INTO Person SELECT DISTINCT PersonID, name, status, mentorID FROM AltPerson;
+INSERT INTO Team SELECT DISTINCT teamName, teamTime FROM AltPerson;
+INSERT INTO Person_Team SELECT DISTINCT personID, teamName, teamRole FROM AltPerson;
+
+SELECT * FROM Person;
+SELECT * FROM Team;
+SELECT * FROM Person_Team;
+
+SELECT personID from Person;
+SELECT teamName from Team;
+SELECT personID, teamName from Person_Team;
 
 /* Exercise 4.1 
 Why it is not well-designed (informally): 
@@ -62,8 +103,8 @@ Candidate keys:
  
  
  Properly normalized schema for DB:
- Person(personID, name, status, mentorID where personID is a PK, mentorID is a FK to Person
- Person_Team(personID, teamID, role)
+ Person(personID, name, status, mentorID) where personID is a PK, mentorID is a FK to Person
+ Person_Team(personID, teamID, teamRole)
  Team(teamID, teamName, teamTime)
  
 
