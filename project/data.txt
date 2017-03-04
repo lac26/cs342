@@ -1,0 +1,136 @@
+Forms by table:
+
+PERSON
+FDs:
+ID -> firstName, lastName, userName, password, bPoints
+userName, password -> ID, firstName, lastName, userName, bPoints
+
+Candidate Keys:
+ID
+userName, password
+
+The values on the LHS are a superkeys in Person so Person is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+CONDITION
+FDs:
+ID -> description
+
+Candidate keys:
+ID
+
+The values on the LHS are a superkeys in Condidtion so Condition is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+BOOK
+FDs:
+ID -> author, title, edition, conditionID
+author, title, edition, conditionID -> ID
+
+Candidate Keys
+ID
+author, title, edition, conditionID
+
+The values on the LHS are a superkeys in Book so Book is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+COLLECTION
+FDs:
+ID -> name
+
+Candidate Keys
+ID
+
+The values on the LHS are a superkeys in Collection so Collection is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+BOOK COLLECTION
+FDs:
+none non-trivial functional dependencies
+
+Candidate Keys
+bookID, collectionID
+
+There are no non-trivial functional dependencies so there are no LHS that must be superkeys in BookCollection so it is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+SHAREGROUP
+FDs
+ID -> name
+
+Candidate Keys
+ID
+
+The values on the LHS are a superkeys in ShareGroup so ShareGroup is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+COLLECTIONGROUP
+FDs:
+none non-trivial functional dependencies
+
+Candidate Keys
+collectionID, groupID
+
+There are no non-trivial functional dependencies so there are no LHS that must be superkeys in CollectionGroup so it is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+PERSONGROUP
+FDs:
+none non-trivial functional dependencies
+
+Candidate Keys
+personID, groupID
+
+There are no non-trivial functional dependencies so there are no LHS that must be superkeys in PersonGroup so it is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+
+---------
+
+BOOKGROUP
+FDs:
+none non-trivial functional dependencies
+
+Candidate Keys
+bookID, groupID
+
+There are no non-trivial functional dependencies so there are no LHS that must be superkeys in BookGroup so it is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+PERSONBOOK
+FDs
+bookID, ownerID -> quant
+
+Candidate Keys
+bookID, ownerID
+
+The values on the LHS are a superkeys in PersonGroup so PersonGroup is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+LOANBOOK
+FDs
+bookID, borrowerID, loanerID -> loanDate, loanWeeks
+
+Candidate Keys
+bookID, borrowerID, loanerID
+
+The values on the LHS are a superkeys in LoanBook so LoanBook is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
