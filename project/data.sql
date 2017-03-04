@@ -40,35 +40,35 @@ INSERT INTO Condition VALUES (seq_cond.nextval, 'excellent');
 INSERT INTO Condition VALUES (seq_cond.nextval, 'like new');
 
 
-INSERT INTO Book VALUES (1,'Erin Wall','aliquam eu,',8,1);
-INSERT INTO Book VALUES (2,'Brynne Hodge','augue. Sed molestie. Sed id risus quis',1,1);
-INSERT INTO Book VALUES (3,'Joy Silva','consequat dolor vitae dolor.',2,5);
-INSERT INTO Book VALUES (4,'Mollie Mcfadden','metus urna convallis erat,',7,4);
-INSERT INTO Book VALUES (5,'Liberty Payne','scelerisque sed, sapien. Nunc',10,1);
+INSERT INTO Book VALUES (seq_book.nextval,'Erin Wall','aliquam eu,',8,1);
+INSERT INTO Book VALUES (seq_book.nextval,'Brynne Hodge','augue. Sed molestie. Sed id risus quis',1,1);
+INSERT INTO Book VALUES (seq_book.nextval,'Joy Silva','consequat dolor vitae dolor.',2,5);
+INSERT INTO Book VALUES (seq_book.nextval,'Mollie Mcfadden','metus urna convallis erat,',7,4);
+INSERT INTO Book VALUES (seq_book.nextval,'Liberty Payne','scelerisque sed, sapien. Nunc',10,1);
 
-INSERT INTO Book VALUES (6,'Clementine Anderson','sit amet massa. Quisque porttitor eros nec',4,1);
-INSERT INTO Book VALUES (7,'Ina Williams','senectus et netus et malesuada',2,2);
-INSERT INTO Book VALUES (8,'Ira Joyner','nec ligula consectetuer rhoncus. Nullam velit dui,',4,5);
-INSERT INTO Book VALUES (9,'Candice Burgess','Nam ligula elit, pretium et, rutrum non,',9,5);
-INSERT INTO Book VALUES (10,'Melvin Duke','sed, hendrerit a, arcu. Sed et',7,5);
+INSERT INTO Book VALUES (seq_book.nextval,'Clementine Anderson','sit amet massa. Quisque porttitor eros nec',4,1);
+INSERT INTO Book VALUES (seq_book.nextval,'Ina Williams','senectus et netus et malesuada',2,2);
+INSERT INTO Book VALUES (seq_book.nextval,'Ira Joyner','nec ligula consectetuer rhoncus. Nullam velit dui,',4,5);
+INSERT INTO Book VALUES (seq_book.nextval,'Candice Burgess','Nam ligula elit, pretium et, rutrum non,',9,5);
+INSERT INTO Book VALUES (seq_book.nextval,'Melvin Duke','sed, hendrerit a, arcu. Sed et',7,5);
 
-INSERT INTO Book VALUES (11,'Dana Guerrero','erat volutpat. Nulla facilisis.',6,3);
-INSERT INTO Book VALUES (12,'Sandra Blanchard','Vivamus nibh dolor, nonummy ac, feugiat',5,4);
-INSERT INTO Book VALUES (13,'Clare Johnson','convallis convallis dolor. Quisque tincidunt',7,1);
-INSERT INTO Book VALUES (14,'Astra Valencia','velit eget laoreet',4,3);
-INSERT INTO Book VALUES (15,'Meghan Hickman','venenatis vel,',2,2);
+INSERT INTO Book VALUES (seq_book.nextval,'Dana Guerrero','erat volutpat. Nulla facilisis.',6,3);
+INSERT INTO Book VALUES (seq_book.nextval,'Sandra Blanchard','Vivamus nibh dolor, nonummy ac, feugiat',5,4);
+INSERT INTO Book VALUES (seq_book.nextval,'Clare Johnson','convallis convallis dolor. Quisque tincidunt',7,1);
+INSERT INTO Book VALUES (seq_book.nextval,'Astra Valencia','velit eget laoreet',4,3);
+INSERT INTO Book VALUES (seq_book.nextval,'Meghan Hickman','venenatis vel,',2,2);
 
-INSERT INTO Book VALUES (16,'Ria Townsend','et, rutrum eu, ultrices sit amet, risus.',3,5);
-INSERT INTO Book VALUES (17,'Briar Carlson','amet metus. Aliquam erat',5,4);
-INSERT INTO Book VALUES (18,'Rhonda Payne','mi eleifend egestas. Sed pharetra,',1,5);
-INSERT INTO Book VALUES (19,'Cheryl Sykes','ultrices. Duis volutpat nunc sit amet metus.',8,6);
-INSERT INTO Book VALUES (20,'Lisandra Hood','turpis nec mauris blandit mattis. Cras',4,2);
+INSERT INTO Book VALUES (seq_book.nextval,'Ria Townsend','et, rutrum eu, ultrices sit amet, risus.',3,5);
+INSERT INTO Book VALUES (seq_book.nextval,'Briar Carlson','amet metus. Aliquam erat',5,4);
+INSERT INTO Book VALUES (seq_book.nextval,'Rhonda Payne','mi eleifend egestas. Sed pharetra,',1,5);
+INSERT INTO Book VALUES (seq_book.nextval,'Cheryl Sykes','ultrices. Duis volutpat nunc sit amet metus.',8,6);
+INSERT INTO Book VALUES (seq_book.nextval,'Lisandra Hood','turpis nec mauris blandit mattis. Cras',4,2);
 
-INSERT INTO Book VALUES (21,'Hayden Gibbs','consectetuer, cursus',6,6);
-INSERT INTO Book VALUES (22,'Carl Collins','auctor, velit',8,2);
-INSERT INTO Book VALUES (23,'Patrick Sears','aliquet, sem ut cursus',1,2);
-INSERT INTO Book VALUES (24,'Skyler Kent','ut aliquam iaculis, lacus pede',1,6);
-INSERT INTO Book VALUES (25,'Maile Schwartz','tellus sem mollis',10,6);
+INSERT INTO Book VALUES (seq_book.nextval,'Hayden Gibbs','consectetuer, cursus',6,6);
+INSERT INTO Book VALUES (seq_book.nextval,'Carl Collins','auctor, velit',8,2);
+INSERT INTO Book VALUES (seq_book.nextval,'Patrick Sears','aliquet, sem ut cursus',1,2);
+INSERT INTO Book VALUES (seq_book.nextval,'Skyler Kent','ut aliquam iaculis, lacus pede',1,6);
+INSERT INTO Book VALUES (seq_book.nextval,'Maile Schwartz','tellus sem mollis',10,6);
 
 
 
