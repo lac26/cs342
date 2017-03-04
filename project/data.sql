@@ -97,6 +97,9 @@ INSERT INTO Collection VALUES (seq_coll.nextval, 'biographies and autobiographie
 INSERT INTO Collection VALUES (seq_coll.nextval, 'harry potter');
 INSERT INTO Collection VALUES (seq_coll.nextval, 'health and wellness');
 
+INSERT INTO Collection VALUES (seq_coll.nextval, 'music boooks');
+INSERT INTO Collection VALUES (seq_coll.nextval, 'nancy drew');
+INSERT INTO Collection VALUES (seq_coll.nextval, 'detective novels');
 
 
 INSERT INTO BookCollection VALUES (1, 1);
@@ -191,6 +194,14 @@ INSERT INTO ShareGroup VALUES (seq_group.nextval, 'fashion advice');
 INSERT INTO ShareGroup VALUES (seq_group.nextval, 'CALL members');
 INSERT INTO ShareGroup VALUES (seq_group.nextval, 'Calvin Alums');
 INSERT INTO ShareGroup VALUES (seq_group.nextval, 'spanish language and literature');
+INSERT INTO ShareGroup VALUES (seq_group.nextval, 'kalamazoo swap');
+INSERT INTO ShareGroup VALUES (seq_group.nextval, 'music lovers');
+
+INSERT INTO ShareGroup VALUES (seq_group.nextval, 'theology form');
+INSERT INTO ShareGroup VALUES (seq_group.nextval, 'evolution readings');
+INSERT INTO ShareGroup VALUES (seq_group.nextval, 'psychology professionals');
+INSERT INTO ShareGroup VALUES (seq_group.nextval, 'weekend reads group');
+INSERT INTO ShareGroup VALUES (seq_group.nextval, 'medical professionals book swap');
 
 INSERT INTO BookGroup VALUES (3,3);
 INSERT INTO BookGroup VALUES (7,7);
@@ -254,6 +265,7 @@ INSERT INTO CollectionGroup (collectionID,groupID) VALUES (5,15);
 
 INSERT INTO CollectionGroup (collectionID,groupID) VALUES (3,15);
 
+
 INSERT INTO PersonGroup (personID,groupID) VALUES (12,4);
 INSERT INTO PersonGroup (personID,groupID) VALUES (5,5);
 INSERT INTO PersonGroup (personID,groupID) VALUES (13,5);
@@ -293,3 +305,10 @@ INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (16,
 INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (5,6,4,'19-APR-06',7);
 INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (23,7,2,'17-MAY-02',25);
 INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (20,4,2,'23-MAY-11',10);
+
+INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (20,11,2,'01-MAY-11',10);
+INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (17,8,8,'06-MAY-11',8);
+INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (4,13,11,'20-MAY-11',10);
+INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (20,6,12,'21-MAY-11',7);
+INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (15,8,1,'22-MAY-11',10);
+
