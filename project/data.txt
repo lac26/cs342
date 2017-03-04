@@ -1,0 +1,150 @@
+1 - Where I got my data
+I started out by hand-generating some of the data in order to test out the relations.  I wanted data that made logical sense to start out with, i.e.
+putting books in collections that made sense and sharing collections to groups that made sense.  After testing out my relations with hand-generated
+data in order to generate more entries for each table I used generatedata.com (for FK I just had generatedata enter a value from 1 to my highest FK).
+
+2- Justification of chosen normal form
+I wanted to get rid of as much redundancy in my database as possible and thus wanted to ensure it was in BCNF (it would not make sense to say have 
+the book information and person information in the same table and this would not follow BCNF since bookID would functionally determine book attributes and personID
+would functionally determine person attributes but neither bookID or personID would be a superkey, not using BCNF means I would be avoiding redundant situations such as this one).  
+
+3 - Demonstration that my schema satisfies my chosen normal form:
+
+Forms by table:
+
+PERSON
+FDs:
+ID -> firstName, lastName, userName, password, bPoints
+userName, password -> ID, firstName, lastName, userName, bPoints
+
+Candidate Keys:
+ID
+userName, password
+
+The values on the LHS are a superkeys in Person so Person is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+CONDITION
+FDs:
+ID -> description
+
+Candidate keys:
+ID
+
+The values on the LHS are a superkeys in Condidtion so Condition is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+BOOK
+FDs:
+ID -> author, title, edition, conditionID
+author, title, edition, conditionID -> ID
+
+Candidate Keys
+ID
+author, title, edition, conditionID
+
+The values on the LHS are a superkeys in Book so Book is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+COLLECTION
+FDs:
+ID -> name
+
+Candidate Keys
+ID
+
+The values on the LHS are a superkeys in Collection so Collection is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+BOOK COLLECTION
+FDs:
+none non-trivial functional dependencies
+
+Candidate Keys
+bookID, collectionID
+
+There are no non-trivial functional dependencies so there are no LHS that must be superkeys in BookCollection so it is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+SHAREGROUP
+FDs
+ID -> name
+
+Candidate Keys
+ID
+
+The values on the LHS are a superkeys in ShareGroup so ShareGroup is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+COLLECTIONGROUP
+FDs:
+none non-trivial functional dependencies
+
+Candidate Keys
+collectionID, groupID
+
+There are no non-trivial functional dependencies so there are no LHS that must be superkeys in CollectionGroup so it is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+PERSONGROUP
+FDs:
+none non-trivial functional dependencies
+
+Candidate Keys
+personID, groupID
+
+There are no non-trivial functional dependencies so there are no LHS that must be superkeys in PersonGroup so it is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+
+---------
+
+BOOKGROUP
+FDs:
+none non-trivial functional dependencies
+
+Candidate Keys
+bookID, groupID
+
+There are no non-trivial functional dependencies so there are no LHS that must be superkeys in BookGroup so it is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+PERSONBOOK
+FDs
+bookID, ownerID -> quant
+
+Candidate Keys
+bookID, ownerID
+
+The values on the LHS are a superkeys in PersonGroup so PersonGroup is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+---------
+
+LOANBOOK
+FDs
+bookID, borrowerID, loanerID -> loanDate, loanWeeks
+
+Candidate Keys
+bookID, borrowerID, loanerID
+
+The values on the LHS are a superkeys in LoanBook so LoanBook is in BCNF.
+There are no multivalued dependencies so the relationship is in 4NF.
+
+All of my tables are in BCNF and 4NF, therefore my relation is in 4NF.
