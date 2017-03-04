@@ -1,0 +1,71 @@
+1. 
+a) The relation is in 1NF because all of the attributes are a single value.  There are no relations or attributes as attribute values within tuples.  The one arguable field is Author_Name which could be made up of two values (firstName, lastName) but I am assuming here is is used as just one value.
+
+The relation is not in BCNF so therefore cannot be in 4NF either.  
+
+This is not in BCNF because, in order to be in BCNF, whenever there is a nontrivial functional dependency X -> A for the relation, then X must be a superkey.
+Therefore Book_title, Book_type, and Author_name must be superkeys.  
+
+A superkey is a set of attributes S in the relation R with the property that no two tuples in R will have t1[S] = t2[S].  In simpler terms, S is unique.
+
+Using this definition, Book_title, Book_type and Author_name are not superkeys because they are not unique.  Well an argument could be made for Book_title being unique, it is unlikely that Book_type (there are more than one book with a certain type) or Author_name (one author could write multiple books)are unique.  Additionally, if there is two books with say two different publishers they would be listened on the same table and thus would also not unique (and thus not a super key).
+
+Therefore it is not in BCNF or 4NF.
+
+b) Original table:
+Book(Book_title, Author_name, Book_type, List_Price, Author_affil, Publisher)
+
+FDs
+Book_title -> Publisher, Author
+Book_type -> List_price
+Author_name -> Author_affil
+
+I would create a table for the author (and make author_name the superkey to satisfy that functional dependency):
+Author(Author_name, Author_affil) and Book(Book_title, Book_type, List_Price, Publisher)
+
+In the above table there is the assumption that 1 book will only have 1 author, so when creating the book table I would add author as a FK (and also make book_title a superkey):
+Author(Author_name, Author_affil) and Book(Book_title, Publisher, Author_name) and the remaining fields are Book_type, List_Price
+
+To encompass the other fields and make Book_type a superkey I would create another table
+BookType(Book_type, List_price)
+the book would now have to referene this book type
+Book(Book_title, Publisher, Author_name, Book_type)
+and Author would stay the same
+Author(Author_name, Author_affil)
+
+So my tables would be:
+BookType(Book_type, List_price)
+Book(Book_title, Publisher, Author_name, Book_type)
+Author(Author_name, Author_affil)
+
+2.
+a) Candidate Keys
+Key is a superkey with the additional property that the removal of any attriute will make it not be a superkey anymore (minimalist).
+Therefore, the candidate keys are:
+Bookname, author, edition
+Bookname, author, Copyright_year
+
+b) We know there is a multivalued dependency X -> Y if there are two tuples t1 and t2 in r such that when t1[x] = t2[x], then there are also two tuples t3, t4 with the following properties (where Z is R - (X U Y)):
+t3[x] = t4[x] = t1[x] = t2[x]
+t3[y] = t1[y] and t4[y] = t2[y]
+t3[z] = t2[z] and t4[z] = t1[z]
+
+In this case, there are two tuples t1 and t2 in r and when t1[DB_fundamentals] = t2[DB_fundamentals], the following properties also hold true:
+t3[Book_Name] = t4[Book_Name] = t1[Book_Name] = t2[Book_Name]
+t1[Author] = t4[Author] and t2[Author] = t3[Author]
+t1[Edition] = t2[Edition] and t3[Edition] = t4[Edition]
+
+In simpler terms, the combinations of the values in 'Author' and 'Edition' are repeated for each value of 'Book_Name'.  
+
+c) Could break into two tables with
+Book_Author(Book_Name, author)
+Book_Edition(Book_Name, Edition, Copyright_Year)
+
+The functional dependencies:
+Book_Name, Edition -> Copyright_Year
+Book_Name -> Author
+
+The above relation is BCNF because there is no LHS that is not a superkey.  Since Book_Name is a superkey in Book_Author and Book_Name, Edition is a superkey in Book_Edition.
+
+When broken into two tables, there are no MVDs so the above is also 4NF.
+
