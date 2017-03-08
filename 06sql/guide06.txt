@@ -1,0 +1,31 @@
+Advanced SQL (Section 7.1, continued) — Write sample queries that:
+
+Implement an inner join (Section 7.1.6).
+
+this will return all actors that have a corresponding movie:
+SELECT P.firstName, P.lastName
+FROM	((Performer AS P JOIN Casting AS C ON P.id = C.performer ID) 
+	 JOIN Movie AS M ON  M.id = C.movieID);
+	 
+
+Implement an outer join (Section 7.1.6).
+
+this will get the status of the performers, all performers will appear rather or not they have a status (with a NULL value if no status):
+SELECT P.firstName, P.lastName, C.status
+FROM (Performer as P LEFT OUTER JOIN Casting as C ON E.id = C.performerId);
+
+
+Use an aggregate function (Section 7.1.7).
+
+this gets the average votes for all movies in the DB:
+SELECT AVG(votes) AS Average_Votes
+FROM Movie;
+
+Use grouping (Section 7.1.8).
+
+select all performers grouped by status in movies
+
+SELECT firstName,lastName
+FROM Casting, Performer
+WHERE id = movieID
+GROUP BY status;
