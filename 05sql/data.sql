@@ -34,8 +34,7 @@ INSERT INTO Person VALUES (12,'ms.','Joanne','Nicole','m','f','1-NOV-1957',5,'wi
 INSERT INTO Person VALUES (13,'mr.','Ralph','Jansma','a','m','1-AUG-1975',6,'single',NULL,NULL);
 INSERT INTO Person VALUES (14,'ms.','Judy','Heerema','a','f',NULL,7,'single',2,'member');
 INSERT INTO Person VALUES (15,NULL,'Susan','Heerema','c','f','1-NOV-1997',7,'child',2,'child');
-INSERT INTO Person VALUES (16,'mr.','Ralph','T','a','m','1-AUG-1975',6,'single',NULL,NULL);
-INSERT INTO Person VALUES (17,'mr.','Ralph','The Man','a','m','1-AUG-1975',6,'single',NULL,NULL);
+
 
 INSERT INTO PersonTeam VALUES (0,'Deacons','clerk','June-99');
 INSERT INTO PersonTeam VALUES (0,'Music','member',NULL);
