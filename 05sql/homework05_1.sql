@@ -19,18 +19,21 @@ WHERE E.hire_date < M.hire_date AND
 
 
 /* c */
-/* join */
+/* joined */
 SELECT DISTINCT country_name
 FROM (countries C JOIN locations L ON C.country_id = L.country_id) JOIN Departments D ON D.location_id = L.location_id;
 
 /* nested */
+select distinct C.country_name from Countries C where C.country_id WHERE EXISTS
+  (select L.country_id from Locations L where L.location_id WHERE EXISTS
+    (select D.location_id from Departments D));
+    
+/* when dealing with large sets of data, it makes more sense to use to use the JOIN because instead of first getting
+all of the say distinct country names and then seeing if a matching location exists and then seeing if a matcing department exists for each country,
+it joins the country initially. 
+However, I did some reading online that says Oracle simply rewrites the subquery as a join.  If this is the case,
+then it would not matter how you wrote it as it would be executed the same anyway.
+*/
+    
 
-SELECT DISTINCT country_name
-FROM Country C
-WHERE  
-AND EXISTS ( SELECT * 
-				FROM Departments D, Locations L
-				WHERE D.location_id = L.location_id AND C.country_id = L.country_id
-
-);
 
