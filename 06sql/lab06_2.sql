@@ -13,11 +13,13 @@ FROM Person P;
 /* b */
 SELECT H.ID, COUNT(*)
 FROM Household H JOIN Person P ON H.ID = P.householdID
+WHERE H.city = 'Grand Rapids'
 GROUP BY H.ID
 HAVING COUNT(*) > 1;
 
 /* c */
 SELECT H.ID, H.phoneNumber, COUNT(*)
 FROM Household H JOIN Person ON H.ID = Person.householdID
+WHERE H.city = 'Grand Rapids'
 GROUP BY H.ID, H.phoneNumber
 HAVING COUNT(*) > 1;
