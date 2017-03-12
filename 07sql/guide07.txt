@@ -29,15 +29,29 @@ Formal languages for the relational model (Chapter 8, for Wednesday)
 
 Relational Algebra (read Sections 8.1–8.3 & 8.5) — Write a simple query on the movies database using SELECT (scondition), PROJECT (pfieldlist), RENAME (?newName) and JOIN (?condition) (see example queries 1 & 2 in Section 8.5).
 
+Get movie name, movie score, and performer id for movies with scores greater than 8.l
+
+HIGH_SCORE_MOVIE <- RENAME_condition movieId, movieTitle, movieYear, movieScore, movieVotes (SELECT_condition(Score>8)(MOVIE))
+
+HIGH_SCORE_MOVIE_PERFORMER <- (HIGH_SCORE_MOVIE JOIN_condition movieId=movieId (CASTING)) JOIN_condition 
+performerID = id (PERFORMER))
+
+RESULT <- PROJECT_condition movieTitle, movieScore, id (HIGH_SCORE_MOVIE_PERFORMER)
+
+
+
 Tuple Relational Calculus (read Sections 8.6.1–8.6.3 & 8.6.8) — Write a simple query on the movies database using the tuple relational calculus queries (see example queries 0 & 1 in Section 8.6.4).
 
-Define the following terms):
+Get the first name and last name of all performers who are a star:
+{p.firstName, p.lastName | PERFORMER(p) and CASTING(c) AND p.id = c.performerID AND p.status = 'star'}
+
+Define the following terms:
 
 Existential and universal quantifiers (see Section 8.6.3).
+Existenial quantifier: true if there exists a tuple that makes the formula true
+Universal quantifier: true if every possible tuple that can be assigned to free occurrences of the tuple in the formula evaluate to ture
 
-safe expressions (see Section 8.6.8).
-
-Write your solutions either in ASCII (e.g., SELECT_condition), Unicode (e.g., scondition) or using hand-writing.a
+safe expressions (see Section 8.6.8).  Safe expressions are guranteed to yield a finite number of tuples in their result. Is said to be safe if all the values in the result are from the domain of the expression.
 
 
 
