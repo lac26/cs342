@@ -1,0 +1,13 @@
+a)
+Creating the view:
+BIRTHDAY <- pfirstname, lastName, birthdate(PERSON)
+Select the elements:
+XGEN <- s(birthdate =>'01-Jan-1961' AND birthdate < '01-Jan-1976') (BIRTHDAY)
+note: 
+
+
+b)
+Creating the view:
+{p.firstName, p.lastName, p.birthdate | PERSON(p) }
+Select the elements:
+{p.firstName,p.lastName, p.birthdate | Person(p) AND (p.birthdate < '01-Jan-1976') AND (p.birthdate =>'01-Jan-1961')}
