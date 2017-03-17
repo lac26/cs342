@@ -1,0 +1,14 @@
+Read Sections 10.1, 10.4.1 & 26.1.1–2:
+
+Name the three basic approaches to database programming.
+1. Embedding database commmand in general-purpose programming language.  
+Database statements embedded in host programming language but are also identified by a special prefix.
+2. Using a library of database 
+
+Explain the concepts of:
+
+impedance mismatch
+
+stored procedures
+
+triggers
