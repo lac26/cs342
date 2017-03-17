@@ -1,10 +1,9 @@
-/* drop constraints */
+/* drop constraints (if have) */
 ALTER TABLE PersonBook
 DROP CONSTRAINT posQuant;
 
 ALTER TABLE LoanBook
 DROP CONSTRAINT posLoan;
-
 
 
 /* add constraints */

@@ -24,8 +24,8 @@ SELECT DISTINCT country_name
 FROM (countries C JOIN locations L ON C.country_id = L.country_id) JOIN Departments D ON D.location_id = L.location_id;
 
 /* nested */
-select distinct C.country_name from Countries C where C.country_id WHERE EXISTS
-  (select L.country_id from Locations L where L.location_id WHERE EXISTS
+select distinct C.country_name from Countries C where C.country_id IN
+  (select L.country_id from Locations L where L.location_id IN
     (select D.location_id from Departments D));
     
 /* when dealing with large sets of data, it makes more sense to use to use the JOIN because instead of first getting
