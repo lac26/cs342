@@ -9,6 +9,15 @@
 -- Spring, 2017
 -- kvlinden
 
+/*
+Updates to make:
+- check contains relationship for book, collection, sharegroup OKKK --- :)
+- updated Condition to make string cond primary key  OKKK addd cond to Condition, condition to Book --- updated condition, Book :)
+- update collection so has an 'owns-a' relationship with person OKKK addded 'owned-by' to book collection
+
+*/
+
+
 
 CREATE TABLE Person (
 	ID integer PRIMARY KEY,
@@ -20,8 +29,8 @@ CREATE TABLE Person (
 	);
 
 CREATE TABLE Condition(
-	ID integer PRIMARY KEY,
-	description varchar(30)
+	cond varchar(15) PRIMARY KEY,
+	description varchar(300)
 );	
 	/* could make sep. type & cond. table to limit values */
 CREATE TABLE Book(
@@ -29,8 +38,8 @@ CREATE TABLE Book(
 	author varchar (100),
 	title varchar (100),
 	edition integer,
-	conditionID integer,
-	Foreign Key (conditionID) REFERENCES Condition(ID) ON DELETE SET NULL
+	condition varchar(15),
+	Foreign Key (condition) REFERENCES Condition(cond) ON DELETE SET NULL
 );
 
 CREATE TABLE Collection(
@@ -41,9 +50,11 @@ CREATE TABLE Collection(
 CREATE TABLE BookCollection(
 	bookID integer,
 	collectionID integer,
+	ownedBy integer,
 	Primary Key (bookID, collectionID),
 	Foreign Key (bookID) REFERENCES Book(ID) ON DELETE CASCADE,
-	Foreign Key (collectionID) REFERENCES Collection(ID) ON DELETE CASCADE	
+	Foreign Key (collectionID) REFERENCES Collection(ID) ON DELETE CASCADE,
+	Foreign Key (ownedBy) REFERENCES Person(ID) ON DELETE SET NULL
 );
 
 CREATE TABLE ShareGroup(

@@ -33,3 +33,4 @@ FROM departments D LEFT OUTER JOIN employees E
 ON D.department_id = E.department_id
 GROUP BY D.department_name
 ORDER BY AVG(E.salary) DESC;
+/* 27 */
