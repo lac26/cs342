@@ -1,14 +1,76 @@
-Read Sections 10.1, 10.4.1 & 26.1.1–2:
-
+1. 
 Name the three basic approaches to database programming.
 1. Embedding database commmand in general-purpose programming language.  
 Database statements embedded in host programming language but are also identified by a special prefix.
-2. Using a library of database 
+2. Using a library of database functions or classes.
+Library functions are made available to host programming language.
+3.Designing a brand new language
+A database programming language is designed from scratch to be compatible with the database.  
+Good for if an application has intensive database interaction.
 
 Explain the concepts of:
 
-impedance mismatch
+impedance mismatch:
+problems that occur because of differences between the database model and the programming language model.
+The data types of the programming language may differ from the attribute types that are available in the data model.
 
 stored procedures
+procedures or functions that are stored and executed by the DBMS at the database server.
 
 triggers
+rules that specify actions that are automatically trigerred by certain events.  Triggers specify active rules.
+
+2.
+Compare and contrast:
+
+procedural vs non-procedural languages:
+In a non-procedural language, the set of data to be operated on is specified but but not the operations to be performed or the order to carry them out in.
+In procedural language, statement execution depends on previous or subsequent statements and control structures.
+
+client-side vs server-side database programming.
+client-side:
+embed SQL statements in applications written in procedural languageses
+server-side:
+application explicitly invoking stored subprograms, written in PL/SQL 
+Can also use a trigger (named program stored in database).
+
+Explain why one would want to do server-side programming using PL/SQL.
+Imporved performance: less information sent over the network, no compilation at time of execution
+Memory allocation: load only a single copy of the procedure into memory for multiple users
+Improved productivity: call already written procedures, achieveing code re-use
+Integrity: reduce likelihood of coding errors
+Security: ou can restrict the database operations that users perform by allowing them to access data only 
+through procedures and functions that run with the definer's privileges
+Invoker's rights procedure: easy  to centralize application logic, even when the underlying data is divided among user schemas.
+
+
+For each of the following code segments, identify the type of the database object and explain what it does.
+
+CREATE PROCEDURE limited_count (limit IN integer) AS
+BEGIN
+  FOR i IN 1..limit LOOP
+      dbms_output.put_line(i);
+  END LOOP;
+END;
+This is a procedure which is a type of subprogram.
+Iterate i from 1 to the parameter value of limit, print out i each time.
+ 
+
+BEGIN
+  dbms_output.put_line('Hello, PL/SQL!');
+END;
+This is an anonymous block because it is not named.
+ 
+
+CREATE TRIGGER log_trigger
+  BEFORE INSERT OR UPDATE OF lastName ON Person
+  FOR each row
+BEGIN
+  dbms_output.put_line('Hello, name change!');
+END;
+This is a triger.
+It is trigerred before a new last name is inserted or before an existing last name is updated
+This is a row trigger, if the statement updates/inserts multiple rows, then a row trigger fires once for each row affected
+For each row updated/inserted 'Hello,name change' will be printed out
+
+ 
