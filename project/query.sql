@@ -70,3 +70,12 @@ FROM ShareGroup SG LEFT OUTER JOIN
  ) SharedBookGroups
  Group By SharedBookGroups.name;
 
+ --find all people who are borrowing books if we know the number of weeks they borrowed for
+ SELECT borrower.firstName || ' ' || borrower.lastName || ' BORROWED ' || B.title || ' FOR ' || LB.loanWeeks || ' weeks' AS Borrowers 
+ FROM Person borrower, Person lender, LoanBook LB, Book B
+ WHERE LB.loanWeeks IS NOT NULL 
+ AND LB.borrowerID = borrower.id 
+ AND LB.loanerID = lender.ID
+ AND B.ID = LB.bookID;
+
+
