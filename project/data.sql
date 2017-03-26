@@ -39,31 +39,35 @@ INSERT INTO Condition VALUES ('excellent', 'good condition, hardly any wear');
 
 INSERT INTO Condition VALUES ('like new', 'like you would purshase it at the store');
 
-
+--CS textbooks
 INSERT INTO Book VALUES (seq_book.nextval,'Thomas H. Cormen','Introduction to Algorithms,',2,'awful');
 INSERT INTO Book VALUES (seq_book.nextval,'Harold Abelson','Structure and Interpretation of Computer Programs ',1,'good');
 INSERT INTO Book VALUES (seq_book.nextval,'Joy Silva','The C Programming Language',2,'awful');
-INSERT INTO Book VALUES (seq_book.nextval,'J.K. Rowling','Harry Potter and the Sorcerer`s Stone',7,'good');
-INSERT INTO Book VALUES (seq_book.nextval,'Lois Lowry','The Giver',10,'good');
+INSERT INTO Book VALUES (seq_book.nextval,'Goodrich and Tamassia','Algorithm Design: Foundations, Analysis, and Internet Examples',7,'good');
+INSERT INTO Book VALUES (seq_book.nextval,'Sebasta','Concepts of Programming Languages',10,'good');
 
+--turkish books
 INSERT INTO Book VALUES (seq_book.nextval,'Yasar Kemal','Ince Memed',NULL,'awful');
 INSERT INTO Book VALUES (seq_book.nextval,'Oguz Atay','Tutunamayanlar',NULL,'good');
 INSERT INTO Book VALUES (seq_book.nextval,'Ahmet Hamdi Tanpınar','Saatleri Ayarlama Enstitüsü',NULL,'excellent');
 INSERT INTO Book VALUES (seq_book.nextval,'Nazim Hikmet','Memleketimden İnsan Manzaraları',NULL,'awful');
 INSERT INTO Book VALUES (seq_book.nextval,'Sabahattin Ali','Kürk Mantolu Madonna',NULL,'good');
 
-INSERT INTO Book VALUES (seq_book.nextval,'Dana Guerrero','erat volutpat. Nulla facilisis.',6,'excellent');
-INSERT INTO Book VALUES (seq_book.nextval,'Sandra Blanchard','Vivamus nibh dolor, nonummy ac, feugiat',5,'mediocore');
-INSERT INTO Book VALUES (seq_book.nextval,'Clare Johnson','convallis convallis dolor. Quisque tincidunt',7,'awful');
-INSERT INTO Book VALUES (seq_book.nextval,'Astra Valencia','velit eget laoreet',4,'good');
-INSERT INTO Book VALUES (seq_book.nextval,'Meghan Hickman','venenatis vel,',2,'awful');
+--German books
+INSERT INTO Book VALUES (seq_book.nextval,'Thomas Lange, Claude Theil','Die Händlerin der Worte',NULL,'excellent');
+INSERT INTO Book VALUES (seq_book.nextval,'Susanne Shmidt','Merjem',NULL,'mediocore');
+INSERT INTO Book VALUES (seq_book.nextval,'Stefanie Höfler','Der Tanz der Tiefseequalle',7,'awful');
+INSERT INTO Book VALUES (seq_book.nextval,'Herbert Heckmann','Benjamin und seine Väter',4,'good');
+INSERT INTO Book VALUES (seq_book.nextval,'Jonas Lüschern','Kraft',2,'awful');
 
-INSERT INTO Book VALUES (seq_book.nextval,'Ria Townsend','et, rutrum eu, ultrices sit amet, risus.',3,'excellent');
-INSERT INTO Book VALUES (seq_book.nextval,'Briar Carlson','amet metus. Aliquam erat',5,'awful');
-INSERT INTO Book VALUES (seq_book.nextval,'Rhonda Payne','mi eleifend egestas. Sed pharetra,',1,'good');
-INSERT INTO Book VALUES (seq_book.nextval,'Cheryl Sykes','ultrices. Duis volutpat nunc sit amet metus.',8,'excellent');
-INSERT INTO Book VALUES (seq_book.nextval,'Lisandra Hood','turpis nec mauris blandit mattis. Cras',4,'good');
+--novels
+INSERT INTO Book VALUES (seq_book.nextval,' F. Scott Fitzgerald','The Great Gatsby',3,'excellent');
+INSERT INTO Book VALUES (seq_book.nextval,'Aldous Huxley','Brave New World',5,'awful');
+INSERT INTO Book VALUES (seq_book.nextval,'Ralph Elliot','Invisible Man',1,'good');
+INSERT INTO Book VALUES (seq_book.nextval,'Jack Kerouac','On the Road',8,'excellent');
+INSERT INTO Book VALUES (seq_book.nextval,'Sinclair Lewis','Main Street',4,'good');
 
+--random examples
 INSERT INTO Book VALUES (seq_book.nextval,'Hayden Gibbs','consectetuer, cursus',6,'good');
 INSERT INTO Book VALUES (seq_book.nextval,'Carl Collins','auctor, velit',8,'mediocore');
 INSERT INTO Book VALUES (seq_book.nextval,'Patrick Sears','aliquet, sem ut cursus',1,'awful');
@@ -309,6 +313,6 @@ INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (20,
 
 INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (17,8,8,'06-MAY-11',NULL);
 INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (4,13,11,'20-MAY-11',10);
-INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (20,6,12,'21-MAY-11',7);
-INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (15,8,1,'22-MAY-11',10);
+INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (20,6,12,'21-MAR-17',7);
+INSERT INTO LoanBook (bookID,borrowerID,loanerID,loanDate,loanWeeks) VALUES (15,8,1,'24-MAR-17',13);
 

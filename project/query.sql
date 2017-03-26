@@ -1,43 +1,18 @@
-/*
-Queries — Build a set of queries for your system that 
-would serve the users/stakeholders you identified in 
-your vision statement and test those queries on your representative data. 
-The nature and complexity of your queries is up to you, 
-but they should satisfy the following requirements.
-
-Include at least three significant queries, 
-with comments on what the query returns (one sentence) 
-and who would care about the results (another sentence).
-
-Include at least one view, with comments on what the view provides (one sentence)
-and who would use it (another sentence).
- Implement it as either a materialized or non-materialized view 
- and justify your choice (one sentence).
-Demonstrate your ability to use the following SQL features 
-somewhere in your queries/view.
-
-a join of at least four tables  -- ok
-proper comparisons of NULL values
-a self-join using tuple variables
-a combination of inner and outer joins --ok
-a nested select statement -- ok
-aggregate statistics on grouped data --ok
-If appropriate, list the other ways you might have designed each query and justify why your chose your approach (one to two sentences per query).
-You may need to modify your schema (and ERD) or your database instance to support these queries. The information “value” of your queries matters here, so don’t just pick simple queries; pick queries that would matter to your stakeholders. Talk to me if you have any questions about the appropriate nature and/or complexity of your queries.
-
-Submit your solution as a commented SQL command file in queries.sql by the end of unit 8. We’ll grade on the utility, complexity and correctness of your queries.
+/* Query 1: selects all books for a given user, including the quantity and condition
+For this example, no user is specified so selects this information for all users
+This would be useful in order for a user to see all of his/her books and the condition of those books
 */
-
---select all books for a given user, including their quanity and condition 
--- this example, since no user is specified, will do it for all users
 SELECT P.lastName || ', ' ||  P.firstName  || ' has book:  ' || B.title || ' COND:' || C.cond AS Book_Person_Condition
 FROM Person P, Book B, PersonBook PB, Condition C
 WHERE P.ID = PB.ownerID 
 AND PB.bookID = B.ID
 AND B.condition = C.cond;
+--why I chose this approach: used a WHERE with AND statements because, since only using 4 tables seemed more intuitive than a join
+--I adjusted the SELECT line to make the output easier to read
 
- /*
-This query gets the total books shared in each share group.
+ /* Query 2: selects all share groups and shows how many books are in them (both books shared directly and books shared via collections)
+ This would be relevant to users scrolling through share groups to see waht share groups were available and how many books each of those share groups had 
+ further explanation of how this query works:
 I first get the name of all groups and the number of books shared directly with that group 
 (shared via the BookGroup relationship).
 Then, I get the name of all the groups and the number of books shared to the group via a collection
@@ -45,9 +20,7 @@ Then, I get the name of all the groups and the number of books shared to the gro
 I then union both of those results and store the union as an alias SharedBookGroups.
 I group all of the results in SharedBookGroups by the name of the group and then add the counts
 for each group to get the total number of books (both directly and via collections) shared with a ShareGroup.
- */
-
- --all share gruops with books in them, show how many books
+*/
  SELECT SharedBookGroups.name, Sum(SharedBookGroups.books) AS Total_Books
  From (
  SELECT SG.name AS name, Count(*) AS Books
@@ -70,12 +43,54 @@ FROM ShareGroup SG LEFT OUTER JOIN
  ) SharedBookGroups
  Group By SharedBookGroups.name;
 
- --find all people who are borrowing books if we know the number of weeks they borrowed for
- SELECT borrower.firstName || ' ' || borrower.lastName || ' BORROWED ' || B.title || ' FOR ' || LB.loanWeeks || ' weeks' AS Borrowers 
+ 
+ /* Query 3: Find all books that should have been returned by now.  Print out the borrowers name, title of books, and due date (computed).
+ * Useful for finding all books in the system that are overdue and could then potentially be used to send out notifications etc.
+ */
+ SELECT borrower.firstName || ' ' || borrower.lastName || ' BORROWED ' || B.title || ' WAS DUE AT ' || (LB.loanDate + (7 * LB.loanWeeks)) AS Borrowers 
  FROM Person borrower, Person lender, LoanBook LB, Book B
  WHERE LB.loanWeeks IS NOT NULL 
+ AND LB.loanDate + (7*LB.loanWeeks) < sysdate 
  AND LB.borrowerID = borrower.id 
  AND LB.loanerID = lender.ID
  AND B.ID = LB.bookID;
+ -- why I chose this approach: I could have used a JOIN instead of WHERE statements however, because I was only joining 3 tables using a join here was simpler
+ -- I compare sysdate to the due date of the book (the loan date plus the loan weeks) to determine if it is overdue
+
+ /*Query 4: The number of users with collections
+	This shows how many users are using the collection feature of the application
+    */
+ SELECT COUNT(*) AS USERS_WITH_COLLECTIONS FROM (
+ SELECT distinct P.id from Person P where P.ID IN
+	(select PB.ownerID from PersonBook PB where PB.bookID IN
+		(select B.ID from Book B where B.ID IN
+			(select BC.bookID from BookCollection BC where BC.collectionID IN
+	  			(select C.ID from Collection C)))));
+ --why I chose this approach: I could have also used a JOIN here instead and gotten the same results.
+ --however, since I only needed to get data relating to the person(and not attributes of other relations), it seemed more intuitive to do the select statement
+ --and 'build my way up' from the collection to the Person
+
+/* View 1:
+view of all a person's book and (if they are in a collection) the collection 
+this makes it easy to create queries regarding individual's books (i.e. what books they have, what collections the books belong to)
+since the data in this view will be frequently updated - every time a book or collection is added - it makes more sense to implement the view NOT as a materialized view (the default)*/
+drop view Person_Book_Collection;
+CREATE VIEW Person_Book_Collection
+AS SELECT P.ID AS PersonID, P.firstName, P.lastName, B.ID AS BookID, B.title, C.id AS CollectionID, C.name FROM
+Person P JOIN (
+	 PersonBook PB JOIN  (
+	 	Book B LEFT OUTER JOIN
+ 			(BookCollection BC JOIN Collection C
+ 			ON BC.collectionID = C.ID)
+	 	ON B.ID = BC.bookID)
+	 ON PB.bookID = B.ID)
+	ON P.ID = PB.ownerID;
+	select * from Person_Book_Collection;
+
+
+
+
+	
+	  			
 
 
