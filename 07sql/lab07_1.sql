@@ -45,3 +45,5 @@ This made sense because the view was simply a mechanism to query the underlying 
 I was curios to see if the updates I had made via a view (i.e. my experiments with Birthday2) remained even when I dropped the view,
 so I dropped my view birthday 2 where I had inserted values in the table and the inserted values still remained 
 Therefore, dropping the views did not affect the table */
+
+drop view BIRTHDAY;
