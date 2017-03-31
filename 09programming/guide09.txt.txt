@@ -1,0 +1,30 @@
+Work through the following materials this week, making sure that you can do the given activities.
+
+Read Sections 18.3-5 as follows:
+
+18.3 - Focus on the Sections 18.3.1 & 18.3.2, skipping the material on algorithms.
+Explain the nature of B+ trees.
+Explain what it means for such a tree to be balanced.
+18.4 - Focus on the first paragraphs, skipping Sections 18.4.1-3.
+Explain the nature of multiple-key indexes
+Compare and contrast tree and data pointers
+18.5 - Focus on Sections 18.5.1 & 18.5.2.
+Explain the nature of hash and bitmap indexes.
+Compare and contrast the uses for B-tree, hash and bitmap indexes.
+Read Section 19 overview (just the first three pages):
+
+Explain the concept of query optimization.
+Read Chapter 20:
+
+Explain the concept of physical database design, in particular indexing and denormalization.
+Explain the process of tuning SQL queries.
+Oracle provides full documentation on its explain-plan functions, but I found this (disreputable-sounding) reference easier to use: Oracle Execution Plan Operations.
+
+Understand and use the output of EXPLAIN PLAN to tune SQL queries.
+Explain at least the following operations:
+TABLE ACCESS FULL
+TABLE ACCESS BY INDEX
+NESTED LOOPS
+HASH JOIN
+INDEX UNIQUE SCAN
+For Oracle’s reference documentation, see Database Performance Tuning Guide, particularly the “Using EXPLAIN PLAN” section.
