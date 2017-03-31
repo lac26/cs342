@@ -16,3 +16,8 @@ WHERE department_name = 'Administration';
 UPDATE EMPLOYEE_DEPARTMENT
 SET first_name = 'Manuel'
 WHERE first_name = 'Jose Manuel';
+--this works, updates first name of employee from Jose Manuel to Manuel
+
+--d
+INSERT INTO EMPLOYEE_DEPARTMENT VALUES (x);
+
