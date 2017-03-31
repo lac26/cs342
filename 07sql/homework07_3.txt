@@ -5,7 +5,7 @@
 {E.employee_id, E.first_name, E.last_name, E.email, E.hire_date, D.department_name|Employee(E) ∧ Department(D) ∧ E.department_id = D.department_id}
 
 --relational calculus
-{DV.first_name, DV.last_name, DV.hire_date| DeptView(DV), DeptView(DV2)
+{DV.first_name, DV.last_name, DV.hire_date| DeptView(DV) ∧ DeptView(DV2)
 ∧ DV.department_name='executive'
 ∧ not exists DV.hire_date < DV2.hire_date
 }
