@@ -13,3 +13,5 @@ from EMPLOYEE_DEPARTMENT
 where department_name = 'Executive'
 ORDER BY hire_date DESC
 ) where ROWNUM = 1;
+
+--cannot update a materialized view
