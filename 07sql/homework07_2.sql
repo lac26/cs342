@@ -14,6 +14,8 @@ where department_name = 'Executive'
 ORDER BY hire_date DESC
 ) where ROWNUM = 1;
 
+
+--cannot do any of the updates because the materialized view is read-only:
 --b
 UPDATE EMPLOYEE_DEPARTMENT
 SET department_name = 'Bean Counting'
