@@ -36,7 +36,7 @@ FROM ShareGroup SG LEFT OUTER JOIN
  Union All
  SELECT SG.name AS name, Count(*) AS Books
 FROM ShareGroup SG LEFT OUTER JOIN
- (BookGroup BG JOIN Book B 
+ (BookGroup BG JOIN Book B ki
  	ON BG.bookID = B.ID)
  	ON SG.ID = BG.groupID
  GROUP BY SG.id, SG.name
