@@ -1,30 +1,50 @@
-Work through the following materials this week, making sure that you can do the given activities.
+Chapter 17
 
-Read Sections 18.3-5 as follows:
+B+ Trees — Focus on the Section 17.3 (skipping the material on algorithms).
+Compare and contrast B-trees and B+-trees.
+B- tree: every value of the search field appears once at some level of the tree
+B+- tree: data pointers are store only at the leaf nodes of the tree. 
 
-18.3 - Focus on the Sections 18.3.1 & 18.3.2, skipping the material on algorithms.
-Explain the nature of B+ trees.
 Explain what it means for such a tree to be balanced.
-18.4 - Focus on the first paragraphs, skipping Sections 18.4.1-3.
-Explain the nature of multiple-key indexes
-Compare and contrast tree and data pointers
-18.5 - Focus on Sections 18.5.1 & 18.5.2.
-Explain the nature of hash and bitmap indexes.
-Compare and contrast the uses for B-tree, hash and bitmap indexes.
-Read Section 19 overview (just the first three pages):
+All of the leaf nodes are at the same level.
 
-Explain the concept of query optimization.
-Read Chapter 20:
+Compare and contrast tree and data pointers.
+Tree pointer: a pointer to another node in the B-tree
+Data pointer: a pointer to a record whose search key field value is equal to a record or a data file block containing taht record
 
-Explain the concept of physical database design, in particular indexing and denormalization.
-Explain the process of tuning SQL queries.
-Oracle provides full documentation on its explain-plan functions, but I found this (disreputable-sounding) reference easier to use: Oracle Execution Plan Operations.
+Explain the nature of multiple-attribute indexes (see the introduction to Section 17.4).
+If want to access non-key attributes, could first select by index and then filter those results.  If both fields that are being accessed have been indexed, both indexes can be used.  
 
-Understand and use the output of EXPLAIN PLAN to tune SQL queries.
-Explain at least the following operations:
-TABLE ACCESS FULL
-TABLE ACCESS BY INDEX
-NESTED LOOPS
-HASH JOIN
-INDEX UNIQUE SCAN
-For Oracle’s reference documentation, see Database Performance Tuning Guide, particularly the “Using EXPLAIN PLAN” section.
+Explain the nature of hash and bitmap indexes (see Sections 17.5.1–2).
+Hash index: secondary structure to access the file by using hashing on a search key other than the one used for primary data file organization
+Bitmap index: creates an index for one or more columns, each value or value range in columns indexed
+
+Physical Database Design — Focus on the Section 17.7.
+Explain the concept of physical database design (PDD).
+It aims to not only create the appropriate sturcture of data but also gurantee good performance.
+
+Compare and contrast the uses for B-tree, hash and bitmap indexes in PDD.
+- B-tree works well for equality and range queries on attributes
+- Hash indexes also work well with equlity conditions, particularly joins to find matching records
+- Bitmap indexes is preferable for systems where data is not frequently updated
+
+
+Explain whether denormalization should be considered a form of PDD.
+Since PPD has to do with updating the physical structure of database I think that it denormalization would play into it because denormalization involves how the data is stored.
+
+Chapter 18
+
+Explain the concept of query optimization (see the introduction to the chapter).
+How the internal representation of the query is created, after scanning, parsing, and validating the query.
+
+Oracle’s EXPLAIN PLAN
+
+Load the small version of the Internet Movie DB defined in the repo (cs342/databases/imdb), configure the auto-trace facility in SQL*Plus (SET SERVEROUTPUT ON; & SET AUTOTRACE ON;) and generate an execuation plan for some simple query. What is the execution plan operation used and what does that operation do?
+
+Explain at least the following operations (see Oracle Execution Plan Operations).
+
+TABLE ACCESS FULL reads all the rows on columns stored on the disk
+TABLE ACCESS BY INDEX retrieves one row form the table
+NESTED LOOPS joins two tables by getting results from one table and joining it with another table
+HASH JOIN reads records from one side of the join into a hashtable which is then filled out by the other sise of the join
+INDEX UNIQUE SCAN performs the B-tree traversal

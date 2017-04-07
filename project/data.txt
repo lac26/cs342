@@ -4,9 +4,11 @@ putting books in collections that made sense and sharing collections to groups t
 data in order to generate more entries for each table I used generatedata.com (for FK I just had generatedata enter a value from 1 to my highest FK).
 
 2- Justification of chosen normal form
-I wanted to get rid of as much redundancy in my database as possible and thus wanted to ensure it was in BCNF (it would not make sense to say have 
+I wanted to get rid of as much redundancy in my database as possible and thus wanted to ensure it was in 4NF (it would not make sense to say have 
 the book information and person information in the same table and this would not follow BCNF since bookID would functionally determine book attributes and personID
-would functionally determine person attributes but neither bookID or personID would be a superkey, not using BCNF means I would be avoiding redundant situations such as this one).  
+would functionally determine person attributes but neither bookID or personID would be a superkey, not using BCNF means I would be avoiding redundant situations such as this one.
+Also, since not having multivalued dependencies is preferable it makes sense not only to make it in BCNF but also 4NF.
+).  
 
 3 - Demonstration that my schema satisfies my chosen normal form:
 
