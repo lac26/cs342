@@ -41,7 +41,7 @@ tooManyMovies EXCEPTION;
 BEGIN
 SELECT COUNT(*) INTO counter FROM Role
 WHERE movieId = :new.movieId AND actorID =:new.actorID;
-IF counter >= 1 THEN
+IF counter >= 2 THEN
 	raise tooManyMovies;
 END IF;
 EXCEPTION
