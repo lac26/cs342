@@ -1,0 +1,14 @@
+When doing exercise 10.1, the delete for once isntacne did not affect the table running in the other instance.
+After the rollback, again the one instance (where there was the rollback) was affected but the other instacne was not affected.
+Similarly for adding a new movie, the query returned the result including the movie only after the movie was added to the specific instance.
+The commit allowed the updates in one instance to affect the updates in the other instance.
+
+
+a) Yes, oracle does handle the transaction life cycle because the instructions to commit etc. must be specified in Oracle.
+b) No, we can not gurantee simply with commit etc.  Durability is not relevant here but there would be no way not to violate the Isolate property because
+if one did two different transactions (in 2 different sections) and then committed both of those transactions, those transactions 
+might then interfere with each other.  
+Another example of this property would be creating two objects with the same primary key in seperate sessions and then trying to commit them both.  Though they
+both would be fine in each session once they had been committed the one committed could not be rolled back, leading to inconsistencies.
+Could also implement atomicity with these commands because if the commands work, could commit all the updates.  If not, would not commit.
+Consistency is possible because the database would go from one consistent state to another because the database would not allow inconsistent points and could ROLLBACK to SAVEPOINT.
