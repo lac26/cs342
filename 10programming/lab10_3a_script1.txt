@@ -1,1 +1,11 @@
---lock table
+
+ select rank from MOvie where id = 238071; 
+
+ update movie set rank = 9.5 where id = 238071;
+ 
+commit;
+
+--since the AUTOCOMMIT is off, when updating this the table in this instance
+--the other instance will not be allowed to update the table.
+-- Once commit, then the other table will be allowed to update the table 
+--but that will not be a problem because will have already set the rank of the movie
