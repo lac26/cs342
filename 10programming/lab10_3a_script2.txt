@@ -1,1 +1,8 @@
--- lock the table
+
+
+ select rank from MOvie where id = 238071;
+ 
+ --subtract 2
+
+ update movie set rank = 7.5 where id = 238071;  --this will give the correct value because will get 9.5 from other instance and subtract 2 to get 7.5
+
