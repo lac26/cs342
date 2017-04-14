@@ -1,5 +1,11 @@
 --Get the movies directed by Clint Eastwood.
 
+
+SET AUTOTRACE ON;
+SET SERVEROUTPUT ON;
+SET TIMING ON;
+
+SET AUTOTRACE TRACEONLY;
 select *
 from movie m, moviedirector md, director d
 where m.id = md.movieId 
@@ -7,6 +13,8 @@ and md.directorid = d.id
 and d.firstName = 'Clint'
 and d.lastName = 'Eastwood';
 
+
+/*
 select d.firstName || ' , ' || d.lastName, count(*)
 from director d, moviedirector md
 where md.directorid = d.id
@@ -20,3 +28,4 @@ and r.movieId = m.id
 and (select count(*) from movie where r.movieid = m.id) > 10
 group by a.id, a.firstName, a.lastName
 having avg(m.rank) > 8.5;
+*/
