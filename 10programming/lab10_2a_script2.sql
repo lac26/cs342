@@ -24,8 +24,6 @@ where id = 238071;
 --read
  select rank from MOvie where id = 238071;
  
- --modify
- update movie set rank = rank  + 1 where id = 238071;
+ --modify "in my head" (add one to the value I got from the select which is 8.5)
+ update movie set rank = 8.5  + 1 where id = 238071;
  
- --write
- commit;
