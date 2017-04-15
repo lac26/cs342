@@ -52,34 +52,24 @@ drop index movie_id;
 
 /* adding the movie_id index adjsuted the execution to be 
 --------------
-
 | Id  | Operation             | Name                 | Rows  | Bytes | Cost (%CP
 U)| Time     |
-
 --------------------------------------------------------------------------------
 --------------
-
 |   0 | SELECT STATEMENT      |                      |    41 |  5330 |     1   (
 0)| 00:00:01 |
-
 |*  1 |  FILTER               |                      |       |       |
   |          |
-
 |   2 |   SORT GROUP BY NOSORT|                      |    41 |  5330 |     1   (
 0)| 00:00:01 |
-
 |   3 |    NESTED LOOPS       |                      |    41 |  5330 |     1   (
 0)| 00:00:01 |
-
 |   4 |     INDEX FULL SCAN   | DIRECTORINDEX        |    34 |  3978 |     1   (
 0)| 00:00:01 |
-
 |*  5 |     INDEX RANGE SCAN  | MOVIEDIRECTORIDINDEX |     1 |    13 |     0   (
 0)| 00:00:01 |
-
 --------------------------------------------------------------------------------
 --------------
 */
 
 --the index full scan is preferable because it reads the entire index as compared to reading the entire table (all rows and columns)
-
