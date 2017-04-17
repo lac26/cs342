@@ -77,6 +77,7 @@ INSERT INTO Book VALUES (seq_book.nextval,'Maile Schwartz','tellus sem mollis',1
 
 
 
+
 INSERT INTO Collection VALUES (seq_coll.nextval, 'school books');
 INSERT INTO Collection VALUES (seq_coll.nextval, 'summer reads');
 INSERT INTO Collection VALUES (seq_coll.nextval, 'computer science collection');
