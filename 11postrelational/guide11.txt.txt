@@ -1,0 +1,32 @@
+1.	Read Your First Cup: An Introduction to the Java EE Platform — Focus on Chapter 2, “Understanding Java Platform, Enterprise Edition”
+a.	Explain the tiers discussed in the article. On which does J2EE focus? On which to the Oracle database focus?
+Client tier: application clients that access Jave EE server
+Web tier: handles interactions between client tier and business tier
+Business tier: provides the business logic of the application
+The Enterprise Information System Tier: Located in a separate machine from Java EE server, consist of database servers and enterprise planning systems.
+Java EE applications concentrate on the middle (web tier and business tier) tier.
+b.	Explain the nature of a J2EE container. What sort of containers are there?
+The J2EE container is the interface between a component and lower-level functionality.
+Types of containers: web container – interface between web component and web server, EJB container – interface between enterprise beans providing business logic and Java EE Server, and application client container is interface between Java EE Client and Java EE Server.
+2.	Read The Java EE Tutorial — This tutorial provides extensive material on J2EE; focus on the sections listed here.
+a.	Sections 1.7–1.8, “Java EE 7 APIs” — Explain the purpose of these technologies (only): JPA, JTA, JAX-RS*, JDBC, JAXB.
+JPA: solution for persistence that uses an object/relational mapping approach to bridge the gap between an object-oriented model and a relational database.
+JTA: provides auto commit to handle transaction commits & rollbacks and demarcation of the entire transaction if transactions depend on each other.
+JAX-RS: defines APIs for development of web services built according to REST architectural style
+JDBC: allows you to invoke SQL commands from java programming languages
+JAXB: convenient way to bind XML schema to a representation in java
+b.	Section 5, “Packaging Applications” — Compare and contrast JARs, WARs & EARs.
+EAR contains java EE modules and optionally deployment descriptors.
+JAR application client modules which contain class files (and optionally a deployment descriptor)
+WAR web modules which contain servlet class files.  Are JAR files but with a WAR extension.
+3.	Review these tutorials, on which the lab is based: Developing a Java EE Application & Creating and Running Your First RESTful Web Service.
+a.	Identify the IDE we’ll use for J2EE development.
+IntelliJ – it is a Java IDE
+b.	Identify the roles of the following technologies in the J2EE application: J2SE’s JDK; GlassFish.
+GlassFish: the application server
+JDK: used as the project SDK (the software development kit).  Thus, JDK is a software development kit used to develop java applications.  It includes a runtime environment, interpreter, compiler etc.
+c.	Explain the nature of a RESTful webservice
+REST is about the architectural rules used to design web services.  
+The four main features of a RESTful services is that it: uses HTTP methods explicitly, is stateless (the HTTP request has the data needed to generate a response), exposes directory structure like URIs (hierarchical, rooted in single path), transfers XML/JSON or both (relationship between data model and objects should be reflected in the way they are transported).  
+
+
