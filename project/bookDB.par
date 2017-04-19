@@ -1,0 +1,6 @@
+DIRECTORY=exp_dir
+DUMPFILE=bookDB.dmp 
+LOGFILE=bookDB.log
+TABLES=bookDB.Person, bookDB.Condition, bookDB.book, bookDB.collection, bookDB.bookCollection,
+bookDB.shareGroup, bookDB.CollectionGroup, bookDB.PersonGroup, bookDB.bookGroup,
+bookDB.PersonBook, bookDB.loanBook

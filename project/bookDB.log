@@ -1,0 +1,18 @@
+;;; 
+Export: Release 11.2.0.2.0 - Production on Wed Apr 19 16:43:11 2017
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+;;; 
+Connected to: Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production
+Starting "SYSTEM"."SYS_EXPORT_TABLE_01":  system/******** parfile=bookDB.par 
+Estimate in progress using BLOCKS method...
+Processing object type TABLE_EXPORT/TABLE/TABLE_DATA
+Total estimation using BLOCKS method: 64 KB
+Processing object type TABLE_EXPORT/TABLE/TABLE
+Processing object type TABLE_EXPORT/TABLE/CONSTRAINT/CONSTRAINT
+. . exported "LYDIA"."PERSON"                            8.140 KB      26 rows
+Master table "SYSTEM"."SYS_EXPORT_TABLE_01" successfully loaded/unloaded
+******************************************************************************
+Dump file set for SYSTEM.SYS_EXPORT_TABLE_01 is:
+  C:\USERS\LAC26\DOCUMENTS\PROJECT\BOOKDB.DMP
+Job "SYSTEM"."SYS_EXPORT_TABLE_01" successfully completed at 16:43:14
