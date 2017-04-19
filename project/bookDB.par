@@ -1,6 +1,6 @@
 DIRECTORY=exp_dir
-DUMPFILE=lydia.dmp 
-LOGFILE=lydia.log
-TABLES=lydia.Person, lydia.Condition, lydia.book, lydia.collection, lydia.bookCollection,
-lydia.shareGroup, lydia.CollectionGroup, lydia.PersonGroup, lydia.bookGroup,
-lydia.PersonBook, lydia.loanBook
+DUMPFILE=bookDB.dmp 
+LOGFILE=bookDB.log
+TABLES=bookDB.Person, bookDB.Condition, bookDB.book, bookDB.collection, bookDB.bookCollection,
+bookDB.shareGroup, bookDB.CollectionGroup, bookDB.PersonGroup, bookDB.bookGroup,
+bookDB.PersonBook, bookDB.loanBook
