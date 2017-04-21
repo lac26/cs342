@@ -1,0 +1,9 @@
+BEGIN
+	FOR i IN 1..10000 LOOP
+		transferRank(176712, 176711, 0.1);
+		COMMIT;
+		transferRank(176711, 176712, 0.1);
+		COMMIT;
+	END LOOP;
+END;
+/
