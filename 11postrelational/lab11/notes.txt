@@ -1,0 +1,26 @@
+Exercise 11.1:
+c) How do the external libraries (in the project pane) relate to J2SE and J2EE?
+
+Glassfish is the J2EE.  JDK is the platform that J2EE is based on and therefore includes all of the
+libraries that J2EE needs, i.e. ejb-api, servlet.jsp etc.
+Since J2SE is the basic java environment that would be JDK.
+
+d) Because GlassFish uses the JSP and servlet libraries is the Web tier.  
+The display in the browser is the client tier.
+
+e) Uses server running at port 8080
+'Detected server http port: 8080'
+When visit port 8080, says the 'Glassfish server' is running.
+GlassFish is an application server which means it can manage J2EE applications 
+(where as a web server would just hanlde HTTP requests).
+
+f) A WAR file is an web application archive which is a directory structure that is ready for deployment 
+on a web server.  It is 'exploded' because it is decompressed.  
+In other words, WAR is zipped up directory structure for J2EE application.
+
+g) A WAR file is 'exploded' if it is decompressed. 
+
+h) A WAR file is a module loaded into the Java Application Server.  EAR files contain both WAR files and JAR files.
+
+Exercise 11.2:
+b) Uses the library javax.ws.rs-api (RESTful Web Service)
