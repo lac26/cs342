@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="Oracle - @localhost" uuid="6d31e321-d732-4289-a9c5-a6ed3508e9c7">
+    <data-source source="LOCAL" name="cpdb&amp;localhost" uuid="74b5d7cd-0cb8-41d0-a57d-8c6d39d510dc">
       <driver-ref>oracle</driver-ref>
       <synchronize>true</synchronize>
       <auto-commit>false</auto-commit>

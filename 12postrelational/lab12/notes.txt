@@ -1,0 +1,34 @@
+Exercise 12.1:
+1. Compare and contrast the database connection you built in Guide 12 (in Intellij IDEA) and this database connection (in GlassFish). 
+Do we need both? If so, explain why; if not, explain why not.
+
+The JDBC is an API that defines how the client accesses the DB.  Thus, JDBC is the connection between the intelliJ and the DB.
+Glassfish connects to the DB directly.  
+Glassfish is our server is the server that would be used in development.
+Thus, need both the connection in Intellij IDEA and the database connection in Glassfish.
+
+Exercise 12.2:
+1.How does Intellij map the database tables into Java entity classes?
+It table we requested is represented by a class.  Each attribute is mapped to a column via the @Columns(name='[the name of the column']))
+The classes representing the tables currently do not contain a FK.
+
+2.What is the PK class do?
+The PersonTeam entity contains the FKS.  It maps the person to the team, thus mapping the one-many relationship. 
+
+3.Does Intellij default to field or property annotations?
+Because it uses getters and setters, it defaults to property annotations.
+
+Exercise 12.3:
+1. Does this application perform marshalling? If so, explain what the marshalling does; if not, explain why it’s not needed.
+Marshalling is transforming the memory representation of an object to a data format that can be transported.
+So yes this applicatin does perform marshalling because it takes the data in the DB and transforms it to a JSON object.
+
+2. Does this code perform any injection? Again, explain…  
+Yes, the EntityManager is injected into an instance variable in the CPDBResource class allowing class to use EntityManager.
+
+3. What does the entity manager do in this code, if anything?
+The entity manager is used to create queries to the database and thus access the data in the database.
+
+Exercise 12.4:
+1. It returns the household and the team entities as a JSON object inside of the person object.  As seen by the brackets inside of brackets.
+
