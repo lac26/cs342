@@ -71,6 +71,11 @@ public class CPDBResource {
         return em.createQuery(em.getCriteriaBuilder().createQuery(PersonEntity.class)).getResultList();
     }
 
+    /*
+    DELETE deletes a person by its id
+    @param id of the person to delete
+    @return a message specifying if delete was successful
+     */
     @DELETE
     @Path("person/{id}")
     @Produces(MediaType.APPLICATION_JSON)
@@ -84,6 +89,11 @@ public class CPDBResource {
         }
     }
 
+    /* PUT reads person in JSON format and updates existing person with that persons data
+    @param id is the id of the person to update
+    @param newPerson is the updated person information in the request formatted in JSON
+    @return either an error message or the updated person record
+     */
     @PUT
     @Path("person/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -133,7 +143,10 @@ public class CPDBResource {
         return Response.ok(em.find(PersonEntity.class,id), MediaType.APPLICATION_JSON).build();
     }
 
-
+    /* POST reads in a new person and creates a corresponding entry for the person
+    @param newPerson is new person data formatted in JSON in the request
+    @return response with new person that has been added to the database
+     */
     @POST
     @Path("people")
     @Consumes(MediaType.APPLICATION_JSON)
