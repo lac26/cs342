@@ -10,6 +10,8 @@ import java.util.List;
 @Entity
 @Table(name = "PERSON", schema = "CPDB", catalog = "")
 public class PersonEntity {
+    public HouseholdEntity houseHold;
+    public List<TeamEntity> teams;
     private long id;
     private String title;
     private String firstname;
@@ -19,8 +21,6 @@ public class PersonEntity {
     private Time birthdate;
     private String householdrole;
     private String homegrouprole;
-    public HouseholdEntity houseHold;
-    public List<TeamEntity> teams;
 
     //@ManyToOne(cascade = CascadeType.PERSIST)
     @ManyToOne

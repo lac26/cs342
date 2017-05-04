@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="cpdb&amp;localhost" uuid="74b5d7cd-0cb8-41d0-a57d-8c6d39d510dc">
+    <data-source name="cpdb&amp;localhost" uuid="ce79fc89-2685-427e-8f8a-bfa3242d158c">
       <database-info product="Oracle" version="Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production" jdbc-version="4.0" driver-name="Oracle JDBC driver" driver-version="12.1.0.2.0">
         <extra-name-characters>$#</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>system</user-name>
-      <introspection-scope>*:PUBLIC,SYS,SYSTEM</introspection-scope>
-      <resolve-scope>*:PUBLIC,SYSTEM</resolve-scope>
+      <user-name>cpdb</user-name>
+      <introspection-scope>*:CPDB,PUBLIC,SYS,SYSTEM</introspection-scope>
+      <resolve-scope>*:CPDB,PUBLIC</resolve-scope>
     </data-source>
   </component>
 </project>
