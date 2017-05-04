@@ -126,8 +126,8 @@
       <file leaf-file-name="CPDBResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CPDBResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1080">
-              <caret line="93" column="54" selection-start-line="93" selection-start-column="54" selection-end-line="93" selection-end-column="54" />
+            <state relative-caret-position="535">
+              <caret line="185" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="186" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1496,12 +1496,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493855225169</updated>
-      <workItem from="1493855229723" duration="9561000" />
+      <workItem from="1493855229723" duration="9628000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9561000" />
+    <option name="totallyTimeSpent" value="9628000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1605" y="0" width="1616" height="876" extended-state="0" />
@@ -1733,8 +1733,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CPDBResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1080">
-          <caret line="93" column="54" selection-start-line="93" selection-start-column="54" selection-end-line="93" selection-end-column="54" />
+        <state relative-caret-position="535">
+          <caret line="185" column="5" selection-start-line="0" selection-start-column="0" selection-end-line="186" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

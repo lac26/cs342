@@ -184,7 +184,4 @@ public class CPDBResource {
         em.persist(myPerson);
         return Response.ok(newPerson, MediaType.APPLICATION_JSON).build();
     }
-
-
-
 }
