@@ -1,0 +1,68 @@
+Work through the following materials this week:
+1.	Read Pramod Sadalage’s NoSQL Databases: An Overview (circa 2012) and explain:
+a.	the key motivations for considering non-relational database systems.
+Partially because of the impedance mismatch between relational data structures and in-memory data-structures of an application.  
+Allows database to be encapsuled in application.
+Relational databases are not well designed to run on a cluster.
+b.	aggregate data models.
+An aggregate is a collection of data that we interact with as a unit and the aggregate forms the boundaries of ACID operations with the database.
+The aggregrate can reside on any machine and thus makes distribution of data easier.
+c.	polyglot persistence.
+Use of multiple data-storage technologies.
+d.	the relevance of the CAP theorem.
+In any distributed system we can choose only two of consistency, availability or partition tolerance.
+e.	the types of NoSQL databases.
+Key-value databases: client can either get the value for the key, put a value for a key, or delete a key from the data store.  The key is a blob that is just stored whatever it is.
+Document database: stores and retrieves documents, which can be XML, JSON, BSON, and so on. These documents are self-describing, hierarchical tree data structures which can consist of maps, collections, and scalar values. (MongoDB)
+Column family stores database: store data in column families as rows that have many columns associated with a row key.  Different from Relational DB because columns can be added to any row at any time without having to add it to other rows.
+Graph database: tore entities and relationships between these entities. Entities are also known as nodes, which have properties. 
+
+f.	when (and when not) to use NoSQL database systems.
+Advantages could be programmer productivity and performance.  Works well for polyglot persistence.  But, should test to see if will improve productivity and performance.
+An alternate source of this basic information is Martin Fowler’s Introduction to NoSQL video.
+2.	Use “Getting Started with the Key/Value API”, Chapters 3–5, from the Oracle NoSQL Database documentation as a reference. Be sure to know how to:
+a.	Compare and contrast Major and minor key components.
+All records have a major key.  The minor key is optional.  The major key is used to determine which partition contains the record.  The combination of the major key and the minor key uniquely identifies a single record in the store.
+b.	Use the appropriate commands to write and retrieve records.
+To write, you simply write a record to the store that uses the appropriate key. If a record with that key does not currently exist in the store, then the record is created for you. If a record exists that does use the specified key, then that record is updated with the information that you are writing to the store.
+To write:
+Construct key, specifying major and minor path components:
+ArrayList<String> majorComponents = new ArrayList<String>();
+ArrayList<String> minorComponents = new ArrayList<String>();
+
+...
+
+// Define the major and minor path components for the key
+majorComponents.add("Smith");
+majorComponents.add("Bob");
+
+minorComponents.add("phonenumber");
+
+// Create the key
+Key myKey = Key.createKey(majorComponents, minorComponents);
+Construct the value, which is the actual data you want to put in the store.
+
+
+String data = "408 555 5555";
+
+// Create the value. Notice that we serialize the contents of the
+// String object when we create the value.
+Value myValue = Value.createValue(data.getBytes());
+Then, put the record in the store.
+
+
+kvstore.put(myKey, myValue);
+To read, create the key with the major and minor path components and then retrieve the record using that key as below:
+ValueVersion vv = kvstore.get(myKey);
+Value v = vv.getValue(); 
+String data = new String(v.getValue());
+
+Be sure that you can compare and contrast relational data representations with key-value representations. Note that we will not use these higher-level features: the NoSQL Table API (We’ll focus on the lower-level key/value API); the Avro value schema mechanism (We’ll restrict ourselves to simple string values).
+3.	This practical article by Re Lai, Enterprise Application Development Using Oracle NoSQL Database, is also helpful. It includes some material that we don't care about (i.e., NetBeans, UML, Avro value-handling) but the following sections are useful for the homework. Skim them now and be prepared to reference them later as needed.
+a.	“Represent Key-Value Pairs” — Designing keys
+b.	“CRUD” — Implementing the standard persistent data operations
+c.	“Composite Keys” — Designing multi-element keys
+d.	“Model Entities” — Modeling relational records in a KV store
+e.	“Model Secondary Indexes” — Storing and retrieving sorted data
+f.	“Model Multi-values and Relationships” — Modeling foreign key relationships
+
