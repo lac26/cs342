@@ -12,5 +12,7 @@ a. A FK in a relational database can go both ways and creates a relationship bet
 A key in KVlite goes one direction i.e. you can get the name of the movie after getting the id but cannot get the id after getting the name.
 
 Exercise 13.3
-a. qq
-b. qq
+a. The key-value database implements a tree structure and by having multiple values for a given key allows for one-to many relationship 
+(as compared to the relational database that implements one to many relationships by having a FK)
+b. The "empty" value for the value might be useful if want to create a key for which the value is not yet known.  The key without a value can also be useful for creating many-to-many relationships
+which require reversing the directory structure.
