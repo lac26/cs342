@@ -1,0 +1,16 @@
+Exercise 13.1
+a. em.merge(EntityName) modifies the given entity in the database, returning the new entity.
+The store.put(key, value) command inserts the key/value pair in the KVLite store.
+In the KVlite store the value is stored with a specific key whereas in the em.merge the given entity is modified (without using a key).
+
+b. The Java hashtable.put() command is used to map the specified key to the specified value in a hashtable.
+The KVLite store.put also maps a specified key to a specified value.  The difference is that we are writing these values to a KVLite store which is more persistent and remembered in
+between run times.
+
+Exercise 13.2
+a. A FK in a relational database can go both ways and creates a relationship between tables.
+A key in KVlite goes one direction i.e. you can get the name of the movie after getting the id but cannot get the id after getting the name.
+
+Exercise 13.3
+a. qq
+b. qq
