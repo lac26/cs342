@@ -1,0 +1,33 @@
+Work through the following materials this week:
+
+Read Section 30.1:
+Name and explain the for kinds of control measures required for database security.
+Access control: DBMS must include provisions for restricting access to the database system as a whole.  Handled by creating user accounts and passwords to control the login process to DBMS.
+
+Inference control: statistical database, data for individuals cannot be accessed.  Must not be able to deduce or infer certain facts concerning individuals from queries taht involve only summary statistics (statistical database security).  Corresponding control measure is inference control.
+
+Flow control: prevents information from flowing in such a way that it reaches unauthorized users.
+
+Data encryption: used to protect sensitive data that is transmitted via some type of communications network.  
+
+Compare and contrast information security and information privacy.
+
+Security: how well a system can protect access to information it contains.  Involves technology to ensure that information is appropriately protected.
+Privacy: how well the use of personal info that the system acquires about a user conforms to the explicit or implicit assumptions regarding that use.  Involves mechanisms to support compliance with some basic principles adn other explicitly stated policies.  
+
+Read Imperva’s Top 5 Database Security Threats.
+Name and explain the security threats discussed in the article.
+1.Excessive, inapporpriate, and unused privileges
+If grant someone database privileges that exceed requirements of job function, those privileges can be abused.
+
+2. Privilege Abuse
+Using privileged service accountss to access sensitive data directly, bypassing application interface.
+
+3. Insufficient Web Application Security
+Attacks on applications that can expose the data.  SQL Injection occurs because of incomplete/inadequate input validation. Web Shell attacks gain unathorized access to remote server.
+
+4. Weak Audit Trail
+Threats caused by insufficient internal processes or gaps.  Failure to monitor for secruity & compliance represents organizational risk.
+
+5. Unsecured Storage Media
+Unprotected backup storage media.
