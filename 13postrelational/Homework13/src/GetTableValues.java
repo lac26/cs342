@@ -1,16 +1,17 @@
 import oracle.kv.*;
-import oracle.kv.util.Load;
-
-import java.awt.*;
 import java.sql.*;
 import java.util.Arrays;
-import java.util.Map;
+
 
 /**
  * Created by lac26 on 5/9/2017.
+ * GetTableValues gets the basic fields from the Movie table
  */
 public class GetTableValues {
 
+    /*
+    Main establishes the JDBC connection and calls the methods that executes the query
+     */
     public static void main(String[] args) throws SQLException{
         Connection jdbcConnection = DriverManager.getConnection(
                 "jdbc:oracle:thin:@localhost:1521:xe", "imdb", "bjarne");
@@ -34,21 +35,21 @@ public class GetTableValues {
         resultSet2.close();
         */
 
-
         // using KVLite
         //create store
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
-
         //pass store and jdbcConnection to LoadDB, loads data into store
         LoadDB.loadMovies(store, connection);
 
-        //major key for movie 92616
+        //create keys to get the name, year, and rank
         Key name_key = Key.createKey(Arrays.asList("movie", "92616"), Arrays.asList("name"));
         Key year_key = Key.createKey(Arrays.asList("movie", "92616"), Arrays.asList("year"));
         Key rank_key = Key.createKey(Arrays.asList("movie", "92616"), Arrays.asList("rank"));
 
+        //the intro statement
         System.out.println("Table:" + "\t" + "movie" + "\n" + "ID:" + "\t" + "92616");
 
+        //get and print out the corresponding value for each key
 
         if (store.get(name_key) != null) {
             String nameResult = new String(store.get(name_key).getValue().getValue());
@@ -65,9 +66,8 @@ public class GetTableValues {
             System.out.println(rankResult);
         }
 
-        store.close();
 
-        //for each field, print out the field value
+        store.close();
 
     }
 }

@@ -11,6 +11,9 @@ import java.util.Map;
  */
 public class GetMovieActors {
 
+    /*
+        Main establishes the JDBC connection and calls the methods that executes the query
+    */
     public static void main(String[] args) throws SQLException {
         Connection jdbcConnection = DriverManager.getConnection(
                 "jdbc:oracle:thin:@localhost:1521:xe", "imdb", "bjarne");
@@ -22,19 +25,20 @@ public class GetMovieActors {
         //create store
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
 
-        //pass store and jdbcConnection to LoadDB, loads data into store
+        //get the actors and the roles of the actors
         LoadDB.loadActors(store, connection);
         LoadDB.loadRoles(store,connection);
 
-        //create key that gets all of the actors
+        //create key that gets all of the actors in movie with id 92616
         Key actorMajorKey = Key.createKey(Arrays.asList("actor", "92616"));
 
-        //get all of the values associated with actors
-
-
+        //intro statement
         System.out.println("Movie: 92616");
+
+        //key to get roles of actors in movie 92616
         Key key = Key.createKey(Arrays.asList("movie", "92616"), Arrays.asList("actorToMovie"));
         Map<Key, ValueVersion> fields = store.multiGet(key, null, null);
+
         for (Map.Entry<Key, ValueVersion> field : fields.entrySet()) {
             //to get id of the actor
             String actor_id = field.getKey().getMinorPath().get(1);
@@ -42,31 +46,26 @@ public class GetMovieActors {
             String first = "";
             String last = "";
             Map<Key, ValueVersion> actor = store.multiGet(Key.createKey(Arrays.asList("actor", actor_id)), null, null);
-
             for (Map.Entry<Key, ValueVersion> field2 : actor.entrySet()) {
                 if (field2.getKey().getMinorPath().get(0).equals("firstname")) {
                     first = new String(field2.getValue().getValue().getValue());
-                } else if (field2.getKey().getMinorPath().get(0).equals("lastname")) {
+                }if (field2.getKey().getMinorPath().get(0).equals("lastname")) {
                     last = new String(field2.getValue().getValue().getValue());
                 }
-
-
             }
+
             //get the role of the actor
             String role = new String(field.getValue().getValue().getValue());
             String cleaned_role = role.substring(1, role.length()-1);
+
             //convert the string to an array
             String[] array = cleaned_role.split(",");
-            //problem, getting one role instead of multiple roles
+
+            //print out values in the array (originally had not array but string but then only got one role from actor)
             for(String actor_role: array) {
                 System.out.print("\n" + actor_id + "\t" + first + "\t" + last + "\t" + actor_role);
             }
 
-
         }
-
-
-
-
     }
 }
