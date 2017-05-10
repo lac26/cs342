@@ -4,6 +4,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Map;
+import oracle.kv.*;
+import oracle.kv.util.Load;
+
+import java.awt.*;
+import java.sql.*;
+import java.util.Arrays;
+import java.util.Map;
 
 /**
  * Created by lac26 on 5/9/2017.
@@ -79,9 +86,52 @@ public class LoadDB {
 
     }
 
+
+
     public static void loadRoles(KVStore store, Connection jdbcConnection) throws SQLException {
+        //get all of the actors for a specific movie
+        Statement jdbcStatement = jdbcConnection.createStatement();
+        //select data from Role
+        ResultSet resultSet = jdbcStatement.executeQuery("SELECT movieid, actorid, role FROM Role");
+
+        //list of roles for actors
+        //ArrayList<String> actorRoles = new ArrayList<>();
+        //list of movie keys
+        ArrayList<Key> movieKeys = new ArrayList<>();
+        //list of movie values
+        ArrayList<ArrayList<String>> actorRoles = new ArrayList<>();
+        while(resultSet.next()){
+        //make a key allowing it to be searchable by the movie id
+            Key movieKey = Key.createKey(Arrays.asList("movie", resultSet.getString(1)), Arrays.asList("actorToMovie", resultSet.getString(2)));
+            // get the role and append to list (originally had just appending value here but then could not get multiple roles)
+            if(!movieKeys.contains(movieKey)){ //if actor associated does not have an array created yet, add the movie and create an array for roles
+                movieKeys.add(movieKey); //add the movie
+                actorRoles.add(new ArrayList<>());
+            }
+            String actorRole = new String(resultSet.getString(3).getBytes());
+            //add the entry to the correct array list inside of movieKeys
+            actorRoles.get(movieKeys.indexOf(movieKey)).add(actorRole);
+        }
+
+        //add the value here
+        //Value movieKeyVal = Value.createValue(resultSet.getString(3).getBytes());
+        //store.put(movieKey, actorRoles);
+        for (int i =0; i<movieKeys.size(); i++){
+            String role = actorRoles.get(i).toString();
+            Value roleVal = Value.createValue(role.getBytes());
+            store.put(movieKeys.get(i), roleVal);
+        }
 
     }
+
+    public static void loadSortedMovies(KVStore store, Connection jdbcConnection) throws SQLException {
+        //get all of the actors for a specific movie
+        Statement jdbcStatement = jdbcConnection.createStatement();
+        //select data from Role
+        ResultSet resultSet = jdbcStatement.executeQuery("SELECT movieid, actorid, role FROM Role");
+    }
+
+
 
     }
 
