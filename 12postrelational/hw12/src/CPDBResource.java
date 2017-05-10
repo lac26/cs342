@@ -102,7 +102,7 @@ public class CPDBResource {
         PersonEntity toUpdate = em.find(PersonEntity.class, id);
         HouseholdEntity toUpateHousehold = toUpdate.getHouseHold();
         HouseholdEntity newHousehold = newPerson.getHouseHold();
-        if (toUpdate.getId() != id){
+        if (newPerson.getId() != id){
             return Response.serverError().entity("please enter id of existing person").build();
         }
         //update all of the values of the person to update with the values of new person
