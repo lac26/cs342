@@ -1,4 +1,7 @@
 import oracle.kv.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 
 
@@ -7,9 +10,14 @@ import java.sql.SQLException;
  */
 public class GetMovieActorRoles {
 
-    public static void main(String[] args) throws SQLException {
-        KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
-        store.close();
+    public static void main(String[] args) throws SQLException{
+        Connection jdbcConnection = DriverManager.getConnection(
+                "jdbc:oracle:thin:@localhost:1521:xe", "imdb", "bjarne");
+        execute(jdbcConnection);
+    }
+
+    public static void execute(Connection connection) throws SQLException {
+
     }
 
 }

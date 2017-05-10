@@ -27,8 +27,6 @@ public class HelloJDBC {
         resultSet.close();
         */
 
-        GetTableValues get_table_values = new GetTableValues();
-        get_table_values.execute(jdbcConnection);
 
         jdbcStatement.close();
         jdbcConnection.close();
