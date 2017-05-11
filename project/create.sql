@@ -16,15 +16,12 @@ GRANT
 	CREATE PROCEDURE,
 	CREATE TRIGGER,
 	UNLIMITED TABLESPACE
-	TO system;
+	TO lydia;
 
 -- Connect to the user's account/schema.
-CONNECT system/pass;
+CONNECT lydia/pass;
 
-DROP DIRECTORY exp_dir;
-CREATE DIRECTORY exp_dir AS 'C:\Users\lac26\Documents\project';
-GRANT READ, WRITE ON DIRECTORY exp_dir to lydia;
 
 -- Create the database.
-DEFINE lydia=C:\Users\Lydia\Desktop\cs342\project
+DEFINE lydia=S:\cs342\project
 @&lydia\load
