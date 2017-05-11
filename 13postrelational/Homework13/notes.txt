@@ -1,0 +1,13 @@
+1. KVLite is a key-value noSQL database system.
+
+2. I would suggest a graph database.  One of the frustrations of using a key-value database is that I could only really go one direction
+(i.e. movie to actor, if I wanted to go actor to movie I had to set up another key and value).  A graph however would let you set up entities
+and relationships between those entities so I could setup a 'movie' with a has-a relationship with a 'actor' and then easily add a 'in-a' relationship from actor to movie.
+The edges that have properties would also allow me to specify values such as role which would be a property of the edge between Movie and Actor.
+
+3. No, I would not be able to efficiently use my existing key-value structure to do this.  In my key-value structure under 'movie' I have 'actorToMovie' but do not have a 'movieToActor'
+setup under 'actor'.
+
+4. A scheme-less database does not require conformation to a rigid schema and does not have type limitations by column type.
+This can be seen in the LoadDB file.
+
