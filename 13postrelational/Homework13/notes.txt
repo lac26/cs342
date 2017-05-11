@@ -8,6 +8,10 @@ The edges that have properties would also allow me to specify values such as rol
 3. No, I would not be able to efficiently use my existing key-value structure to do this.  In my key-value structure under 'movie' I have 'actorToMovie' but do not have a 'movieToActor'
 setup under 'actor'.
 
-4. A scheme-less database does not require conformation to a rigid schema and does not have type limitations by column type.
-This can be seen in the LoadDB file.
+4. A scheme-less database does not require conformation to a rigid schema and does not have type limitations by column type.  This means that a key can be added with any type of value and does not need to conform to an existing schema.
+This can be seen in the LoadDB file say when I create a list as a value as compared to a string as a value.  There is nothing that prevents me from saying:
+            String role = actorRoles.get(i).toString();
+            Value roleVal = Value.createValue(role.getBytes());
+where the string is actually an array.  
+Furthermore, there is nothing specifying the paths I can create.  In order to access the actors in a given movie I am simply able to make a new path "actorsToMovie" even though I had not specified such a path before.
 
