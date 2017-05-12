@@ -36,7 +36,7 @@ public class BookEntity {
     /*ManyToMany relationship, there can be many books in a collection and a book can belong to many collections */
     @ManyToMany
     @JoinTable(name = "BOOKCOLLECTION", schema = "LYDIA",
-            joinColumns = @JoinColumn(name = "BOOKID", refergit aencedColumnName = "ID", nullable = false),
+            joinColumns = @JoinColumn(name = "BOOKID", referencedColumnName = "ID", nullable = false),
             inverseJoinColumns = @JoinColumn(name = "COLLECTIONID", referencedColumnName = "ID", nullable = false))
     public List<CollectionEntity> getCollections(){return collections;}
     public void setCollections(List<CollectionEntity> newCollections){this.collections= newCollections;}
