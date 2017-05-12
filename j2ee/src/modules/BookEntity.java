@@ -1,6 +1,8 @@
 package modules;
 
 import javax.persistence.*;
+import java.awt.print.Book;
+import java.util.List;
 
 /**
  * Created by lac26 on 5/11/2017.
@@ -13,20 +15,40 @@ public class BookEntity {
     private String title;
     private Long edition;
     private ConditionEntity condition;
+    private List<SharegroupEntity> groups;
+    private List<CollectionEntity> collections;
 
-    //@ManyToOne(cascade = CascadeType.PERSIST)
     /*one book can only have one condition but one condition can describe many books so is ManyToOne*/
     @ManyToOne
     @JoinColumn(name = "condition", referencedColumnName = "cond")
     public ConditionEntity getCondition(){return condition;}
     public void setCondition(ConditionEntity h) {this.condition= h;}
 
+
+    /*ManyToMany relationship, there can be many books in a group and a book can belong to many groups */
+    @ManyToMany
+    @JoinTable(name = "BOOKGROUP", schema = "LYDIA",
+            joinColumns = @JoinColumn(name = "BOOKID", referencedColumnName = "ID", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "GROUPID", referencedColumnName = "ID", nullable = false))
+    public List<SharegroupEntity> getGroups(){return groups;}
+    public void setGroups(List<SharegroupEntity> newGroups){this.groups= newGroups;}
+
+    /*ManyToMany relationship, there can be many books in a collection and a book can belong to many collections */
+    @ManyToMany
+    @JoinTable(name = "BOOKCOLLECTION", schema = "LYDIA",
+            joinColumns = @JoinColumn(name = "BOOKID", refergit aencedColumnName = "ID", nullable = false),
+            inverseJoinColumns = @JoinColumn(name = "COLLECTIONID", referencedColumnName = "ID", nullable = false))
+    public List<CollectionEntity> getCollections(){return collections;}
+    public void setCollections(List<CollectionEntity> newCollections){this.collections= newCollections;}
+
+
+    @GeneratedValue(generator = "lydiaSequence")
+    @SequenceGenerator(name = "lydiaSequence", sequenceName = "seq_book", allocationSize = 1)
     @Id
     @Column(name = "ID")
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
@@ -46,7 +68,6 @@ public class BookEntity {
     public String getTitle() {
         return title;
     }
-
     public void setTitle(String title) {
         this.title = title;
     }
@@ -56,7 +77,6 @@ public class BookEntity {
     public Long getEdition() {
         return edition;
     }
-
     public void setEdition(Long edition) {
         this.edition = edition;
     }

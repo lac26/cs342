@@ -47,6 +47,20 @@
         <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
       </PATH_ELEMENT>
     </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="lydia@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
+    </PATH>
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
@@ -86,28 +100,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookResource.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BookResource.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BookResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1008#1009#0" expanded="true" />
-                <element signature="e#1044#1045#0" expanded="true" />
-                <element signature="e#1315#1316#0" expanded="true" />
-                <element signature="e#1367#1368#0" expanded="true" />
+                <element signature="e#966#967#0" expanded="true" />
+                <element signature="e#1002#1003#0" expanded="true" />
+                <element signature="e#1273#1274#0" expanded="true" />
+                <element signature="e#1325#1326#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BookEntity.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BookEntity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/modules/BookEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-              <folding />
+            <state relative-caret-position="238">
+              <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -127,15 +143,15 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="dummy://restClient/response19.json" root0="SKIP_INSPECTION" />
+    <setting file="dummy://restClient/response151.json" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/MyApplication.java" />
-        <option value="$PROJECT_DIR$/src/modules/BookEntity.java" />
         <option value="$PROJECT_DIR$/src/BookResource.java" />
+        <option value="$PROJECT_DIR$/src/modules/BookEntity.java" />
       </list>
     </option>
   </component>
@@ -263,6 +279,7 @@
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Oracle" />
     <property name="JPA.DatabaseSchemaImportDialog" value="199b2deb-dece-48d4-9928-cd4241a73de9" />
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="ImportMappingsDialog.RecentPackages">
@@ -272,6 +289,300 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Harold Abelson&quot;,   &quot;collections&quot;: [     {       &quot;id&quot;: 1,       &quot;name&quot;: &quot;school books&quot;     },     {       &quot;id&quot;: 3,       &quot;name&quot;: &quot;computer science collection&quot;     }   ],   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 1,   &quot;groups&quot;: [     {       &quot;id&quot;: 8,       &quot;name&quot;: &quot;German Language Swap&quot;     }   ],   &quot;id&quot;: 2,   &quot;title&quot;: &quot;Structure and Interpretation of Computer Programs &quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Harold Abelson&quot;,   &quot;collections&quot;: [     {       &quot;id&quot;: 1,       &quot;name&quot;: &quot;school books&quot;     },     {       &quot;id&quot;: 100,       &quot;name&quot;: &quot;computer science collection&quot;     }   ],   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 1,   &quot;groups&quot;: [     {       &quot;id&quot;: 8,       &quot;name&quot;: &quot;German Language Swap&quot;     }   ],   &quot;id&quot;: 2,   &quot;title&quot;: &quot;Structure and Interpretation of Computer Programs &quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;collections&quot;: [],   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;groups&quot;: [],   &quot;id&quot;: 1,   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/books" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;collections&quot;: [],   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;groups&quot;: [],   &quot;id&quot;: 1,   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;author&quot;,   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;id&quot;: 100,   &quot;title&quot;: &quot;hello&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;id&quot;: 100,   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;id&quot;: 1,   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book/1" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;id&quot;: 1,   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;id&quot;: 1,   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;collections&quot;: [     {       &quot;id&quot;: 1,       &quot;name&quot;: &quot;school books&quot;     },     {       &quot;id&quot;: 2,       &quot;name&quot;: &quot;summer reads&quot;     },     {       &quot;id&quot;: 3,       &quot;name&quot;: &quot;computer science collection&quot;     },     {       &quot;id&quot;: 4,       &quot;name&quot;: &quot;german books&quot;     },     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;turkish novels&quot;     },     {       &quot;id&quot;: 8,       &quot;name&quot;: &quot;travel books&quot;     },     {       &quot;id&quot;: 13,       &quot;name&quot;: &quot;bike club&quot;     },     {       &quot;id&quot;: 17,       &quot;name&quot;: &quot;1900s collection&quot;     }   ],   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;groups&quot;: [     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;Broene Book Share&quot;     },     {       &quot;id&quot;: 7,       &quot;name&quot;: &quot;Turkish Language Swap&quot;     }   ],   &quot;title&quot;: &quot;Introduction to Algorithms2&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H.&quot;,   &quot;collections&quot;: [     {       &quot;id&quot;: 1,       &quot;name&quot;: &quot;school books&quot;     },     {       &quot;id&quot;: 2,       &quot;name&quot;: &quot;summer reads&quot;     },     {       &quot;id&quot;: 3,       &quot;name&quot;: &quot;computer science collection&quot;     },     {       &quot;id&quot;: 4,       &quot;name&quot;: &quot;german books&quot;     },     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;turkish novels&quot;     },     {       &quot;id&quot;: 8,       &quot;name&quot;: &quot;travel books&quot;     },     {       &quot;id&quot;: 13,       &quot;name&quot;: &quot;bike club&quot;     },     {       &quot;id&quot;: 17,       &quot;name&quot;: &quot;1900s collection&quot;     }   ],   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;groups&quot;: [     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;Broene Book Share&quot;     },     {       &quot;id&quot;: 7,       &quot;name&quot;: &quot;Turkish Language Swap&quot;     }   ],   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;collections&quot;: [     {       &quot;id&quot;: 1,       &quot;name&quot;: &quot;school books&quot;     },     {       &quot;id&quot;: 2,       &quot;name&quot;: &quot;summer reads&quot;     },     {       &quot;id&quot;: 3,       &quot;name&quot;: &quot;computer science collection&quot;     },     {       &quot;id&quot;: 4,       &quot;name&quot;: &quot;german books&quot;     },     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;turkish novels&quot;     },     {       &quot;id&quot;: 8,       &quot;name&quot;: &quot;travel books&quot;     },     {       &quot;id&quot;: 13,       &quot;name&quot;: &quot;bike club&quot;     },     {       &quot;id&quot;: 17,       &quot;name&quot;: &quot;1900s collection&quot;     }   ],   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;groups&quot;: [     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;Broene Book Share&quot;     },     {       &quot;id&quot;: 7,       &quot;name&quot;: &quot;Turkish Language Swap&quot;     }   ],   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;collections&quot;: [     {       &quot;id&quot;: 1,       &quot;name&quot;: &quot;school books&quot;     },     {       &quot;id&quot;: 2,       &quot;name&quot;: &quot;summer reads&quot;     },     {       &quot;id&quot;: 3,       &quot;name&quot;: &quot;computer science collection&quot;     },     {       &quot;id&quot;: 4,       &quot;name&quot;: &quot;german books&quot;     },     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;turkish novels&quot;     },     {       &quot;id&quot;: 8,       &quot;name&quot;: &quot;travel books&quot;     },     {       &quot;id&quot;: 13,       &quot;name&quot;: &quot;bike club&quot;     },     {       &quot;id&quot;: 17,       &quot;name&quot;: &quot;1900s collection&quot;     }   ],   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;groups&quot;: [     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;Broene Book Share&quot;     },     {       &quot;id&quot;: 7,       &quot;name&quot;: &quot;Turkish Language Swap&quot;     }   ],   &quot;id&quot;: 1,   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080" />
+          <option name="urlPath" value="j2ee_war_exploded/bookDB/book/1" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Accept" />
+                <option name="value" value="*/*" />
+              </KeyValuePair>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{   &quot;author&quot;: &quot;Thomas H. Cormen&quot;,   &quot;collections&quot;: [     {       &quot;id&quot;: 1,       &quot;name&quot;: &quot;school books&quot;     },     {       &quot;id&quot;: 2,       &quot;name&quot;: &quot;summer reads&quot;     },     {       &quot;id&quot;: 3,       &quot;name&quot;: &quot;computer science collection&quot;     },     {       &quot;id&quot;: 4,       &quot;name&quot;: &quot;german books&quot;     },     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;turkish novels&quot;     },     {       &quot;id&quot;: 8,       &quot;name&quot;: &quot;travel books&quot;     },     {       &quot;id&quot;: 13,       &quot;name&quot;: &quot;bike club&quot;     },     {       &quot;id&quot;: 17,       &quot;name&quot;: &quot;1900s collection&quot;     }   ],   &quot;condition&quot;: {     &quot;cond&quot;: &quot;good&quot;,     &quot;description&quot;: &quot;in good condition with only either a few marks a little bit of wear&quot;   },   &quot;edition&quot;: 2,   &quot;groups&quot;: [     {       &quot;id&quot;: 5,       &quot;name&quot;: &quot;Broene Book Share&quot;     },     {       &quot;id&quot;: 7,       &quot;name&quot;: &quot;Turkish Language Swap&quot;     }   ],   &quot;id&quot;: 1,   &quot;title&quot;: &quot;Introduction to Algorithms,&quot; }" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="PUT" />
           <option name="urlBase" value="http://localhost:8080" />
@@ -620,6 +931,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
     </configuration>
@@ -785,6 +1097,12 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -820,6 +1138,36 @@
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="9009" />
       </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -855,12 +1203,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1494546377499</updated>
-      <workItem from="1494546381709" duration="4108000" />
+      <workItem from="1494546381709" duration="4993000" />
+      <workItem from="1494594957397" duration="135000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4108000" />
+    <option name="totallyTimeSpent" value="13631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1605" y="0" width="1616" height="867" extended-state="0" />
@@ -868,7 +1217,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -877,14 +1226,14 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.336856" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36459708" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4953765" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.235" sideWeight="0.16135459" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.206875" sideWeight="0.16135459" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.235" sideWeight="0.8386454" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.206875" sideWeight="0.8386454" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.245625" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.241875" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -948,23 +1297,133 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BookResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="114" column="0" selection-start-line="114" selection-start-column="0" selection-end-line="114" selection-end-column="0" />
+        <state relative-caret-position="27">
+          <caret line="91" column="7" selection-start-line="91" selection-start-column="7" selection-end-line="91" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1367#1368#0" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BookResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/BookEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/199b2deb-dece-48d4-9928-cd4241a73de9/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/META-INF/persistence.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MyApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BookResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#966#967#0" expanded="true" />
+            <element signature="e#1002#1003#0" expanded="true" />
+            <element signature="e#1273#1274#0" expanded="true" />
+            <element signature="e#1325#1326#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/modules/BookEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="38" column="65" selection-start-line="38" selection-start-column="65" selection-end-line="38" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
