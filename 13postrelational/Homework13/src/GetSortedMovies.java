@@ -27,7 +27,7 @@ public class GetSortedMovies {
         //load movies into store
         LoadDB.loadMovies(store, connection);
 
-        //first param is title, 2nd param is the movie itself
+        //create an array list of movies
         List<Movie> movies = new ArrayList<Movie>();
         //get to get fields associated with movie
         Key key = Key.createKey(Arrays.asList("movie"));

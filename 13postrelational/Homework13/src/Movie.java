@@ -3,6 +3,7 @@
  * This class is useful for storing information related to a movie and thus makes sorting easier.
  * (another implementation for sorting would have been a hashtable, but since there were duplicate years I would have had to make the value an array,
  * this seemed just (if not more) efficient)
+ * Movie stores and provides getters for year,title, and id
  */
 public class Movie {
     private Integer year;
