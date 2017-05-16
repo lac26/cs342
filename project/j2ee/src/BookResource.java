@@ -7,6 +7,7 @@ import javax.persistence.PersistenceContext;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -146,21 +147,31 @@ public class BookResource {
         b.setCondition(correspondingCond);
 
 
+        List<SharegroupEntity> groupList = new ArrayList<>();
         //check to make sure the groups exist
         List<SharegroupEntity> updateGroups = newBook.getGroups();
         for (SharegroupEntity se : updateGroups) {
             if ((em.find(SharegroupEntity.class, se.getId())) == null) {
                 return Response.serverError().entity("please enter a group that exists").build();
             }
+            else{
+                //make the name of sharegroup entity match the id
+                groupList.add(em.find(SharegroupEntity.class, se.getId()));
+            }
         }
         b.setGroups(newBook.getGroups());
 
 
+        List<CollectionEntity> collectionList = new ArrayList<>();
         //check to make sure the collections exist
         List<CollectionEntity> updateCollections  = newBook.getCollections();
         for (CollectionEntity ce : updateCollections) {
             if ((em.find(SharegroupEntity.class, ce.getId())) == null) {
                 return Response.serverError().entity("please enter a group that exists").build();
+            }
+            else{
+                //make the name of sharegroup entity match the id
+                collectionList.add(em.find(CollectionEntity.class, ce.getId()));
             }
         }
         b.setCollections(newBook.getCollections());
