@@ -9,7 +9,11 @@ bookconditionp - condition of book to insert
 
 if the book already exists, simply update the quantity of the book the person has
 
-if the book does not exist, create an instance of that book with the given quantity for the given person
+if the book does not exist, create an instance of that book with the given quantity for the given person.
+
+Transaction has the ACID properties.
+Atomicity is manually applied via the rollbacks and commits and isolation is by the lock tables.
+Durability and preservation are provided by the system for database design.
 */
 CREATE OR REPLACE PROCEDURE insert_book_for_person (quantp in PersonBook.quant%type, personidp in Person.id%type,
 bookidp in Book.id%type, bookauthorp in Book.author%type, booktitlep in Book.title%type,
@@ -18,6 +22,11 @@ As entryCounter integer;
 bookCounter integer;
 personCounter integer;
 BEGIN
+SAVEPOINT startPoint;
+/* lock tables before starting transaction */
+LOCK TABLE Book IN SHARE MODE;
+LOCK TABLE Person IN SHARE MODE;
+LOCK TABLE PersonBook IN SHARE MODE;
 SELECT COUNT(*)
 INTO entryCounter
 FROM Book B, Person P, PersonBook PB
@@ -42,11 +51,14 @@ elsif personCounter > 0 and personCounter > 0 then
 		else
 		RAISE_APPLICATION_ERROR(-20002, 'Book ' || bookidp ||
     	' already exists but corresponding person entry doess not.  Please re-try query with different book or different person' );
+		ROLLBACK TO startPoint;
 		end if;
 else 
 RAISE_APPLICATION_ERROR(-20003, 'Person ' || personidp ||
     	' does not exist' );
+		ROLLBACK TO startPoint;
 END IF;
+COMMIT;
 END;
 /
 show errors;
@@ -63,10 +75,19 @@ personidp - the id of the owner of the book
 bookidp - the id of the book
 
 If an entry already exists for the book, update it.  Otherwise, throw an error.
+
+Transaction has the ACID properties.
+Atomicity is manually applied via the rollbacks and commits and isolation is by the lock tables.
+Durability and preservation are provided by the system for database design.
 */
 CREATE OR REPLACE PROCEDURE updateQuant (quantp in PersonBook.quant%type, bookidp in Book.id%type, personidp in Person.id%type) 
 AS counter integer;
 BEGIN
+SAVEPOINT startPoint;
+/* lock the tables before starting transactions */
+LOCK TABLE Book in Share Mode;
+LOCK TABLE Person in Share Mode;
+LOCK TABLE PersonBook in Share Mode;
 SELECT count(*)
 INTO counter
 FROM Book B, Person P, PersonBook PB
@@ -78,9 +99,11 @@ if counter = 1 then
 elsif counter = 0 then
 	RAISE_APPLICATION_ERROR(-20000, 'Person ' || personidp ||
     	' with book ' || bookidp || ' does not exist.');
+		ROLLBACK TO startPoint;
 else 
 	RAISE_APPLICATION_ERROR(-20001, 'Person ' || personidp ||
     	' with book ' || bookidp || ' has mutliple records.  Fix this before updating.');
+		ROLLBACK TO startPoint;
 end if;
 END;
 /
