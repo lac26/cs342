@@ -23,30 +23,27 @@ public class GetBookOwners {
         //create store
         KVStore store = KVStoreFactory.getStore(new KVStoreConfig("kvstore", "localhost:5000"));
 
-        //get the actors and the roles of the actors
+        //get the owners and the books the owners own
         LoadDB.loadOwners(store,connection);
         LoadDB.loadBookOwners(store,connection);
 
-
-        //create key that gets all of the actors in movie with id 92616
-        //Key actorMajorKey = Key.createKey(Arrays.asList("actor", "92616"));
-
         String bookId = "2";
 
-        //key to get roles of actors in movie 92616
+        //get all owners with book id 2
         Key key = Key.createKey(Arrays.asList("book", bookId), Arrays.asList("ownerToBook"));
         Map<Key, ValueVersion> fields = store.multiGet(key, null, null);
 
         for (Map.Entry<Key, ValueVersion> field : fields.entrySet()) {
-            //to get id of the actor
+            //to get id of the owner
             System.out.println(field.getKey().getMajorPath().toString() + "    " + field.getKey().getMinorPath().toString());
             String owner_id = field.getKey().getMinorPath().get(1);
 
-            //get the information for the actor
+
             String first = "";
             String last = "";
             String title ="";
             String author="";
+
             Map<Key, ValueVersion> owner = store.multiGet(Key.createKey(Arrays.asList("owner", owner_id)), null, null);
             for (Map.Entry<Key, ValueVersion> field2 : owner.entrySet()) {
                 if (field2.getKey().getMinorPath().get(0).equals("firstname")) {
@@ -65,14 +62,14 @@ public class GetBookOwners {
                 }
             }
 
-            //get the role of the actor
+            //get the quanity of the book
             String quant = new String(field.getValue().getValue().getValue());
             String cleaned_quant = quant.substring(1, quant.length()-1);
 
             //convert the string to an array
             String[] array = cleaned_quant.split(",");
 
-            //print out values in the array (originally had not array but string but then only got one role from actor)
+            //print out values in the array
             for(String q: array) {
                 System.out.print("Book ID: " + "\t" + bookId +
                         "\nBook title: " + "\t" + title +

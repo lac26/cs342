@@ -136,12 +136,12 @@ public class LoadDB {
             if (owners.getString(3) != null) {
                 last_val = Value.createValue(owners.getString(3).getBytes());
             }
-
             store.put(last_key, last_val);
         }
         owners.close();
         jdbcStatement.close();
     }
+
 
 
     /* loadBookOwners loads the data from PersonBook using JDBC and then puts the data into KVLite
@@ -163,7 +163,7 @@ public class LoadDB {
             //make a key allowing it to be searchable by the book id
             Key bookKey = Key.createKey(Arrays.asList("book", book_group.getString(1)), Arrays.asList("ownerToBook", book_group.getString(2)));
             // get the quantity and append to list
-            if(!bookKeys.contains(bookKey)){ //if actor associated does not have an array created yet, add the movie and create an array for roles
+            if(!bookKeys.contains(bookKey)){ //if owner associated does not have an array created yet, add the owner and create an array for quantities
                 bookKeys.add(bookKey); //add the book
                 quants.add(new ArrayList<>());
             }
