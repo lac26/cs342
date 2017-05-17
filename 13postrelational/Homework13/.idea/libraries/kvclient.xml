@@ -8,5 +8,6 @@
     <JAVADOC />
     <SOURCES />
     <jarDirectory url="file://C:/oraclexe" recursive="false" />
+    <jarDirectory url="jar://C:/glassfish-4.1-web/glassfish4/glassfish/lib/ojdbc6.jar!/" recursive="false" />
   </library>
 </component>

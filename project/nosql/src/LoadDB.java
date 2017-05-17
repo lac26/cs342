@@ -1,7 +1,6 @@
 import oracle.kv.KVStore;
 import oracle.kv.Key;
 import oracle.kv.Value;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -12,6 +11,15 @@ import java.util.Arrays;
 /**
  * Created by lac26 on 5/12/2017.
  * LoadDB pulls data from the OracleXE Book, Person, and PersonBook tables and load it into the Oracle KVLite using a key-value structure
+ * Key structure:
+ * book/[id]/author/[author name]
+ * book/[id]/title/[title name]
+ * book/[id]/edition[edition]
+ * book/[id]/condition/[condition]
+ * book/[title]/[author]/[edition]/[condition] *to make sorting by title easier
+ * owner/[id]/[firstname]
+ * owner/[id]/[lastname]
+ * book/[bookid]/ownerToBook/[ownerID]/[quantity]
  */
 public class LoadDB {
 
@@ -41,7 +49,7 @@ public class LoadDB {
                 title_val = Value.createValue(books.getString(3).getBytes());
             }
 
-            //create key for author /book/book_id/author
+            //create key for author /book/book_id/edition
             Key edition_key = Key.createKey(Arrays.asList("book", books.getString(1)), Arrays.asList("edition"));
             //value for author
             Value edition_val = Value.createValue("".getBytes());
@@ -66,6 +74,40 @@ public class LoadDB {
         books.close();
         jdbcStatement.close();
     }
+
+
+    /* loadSortedBooks loads the data from Book using JDBC and then puts the data into KVLite.
+    * creates a key/value structure like book/[title]/[author]/[edition]/[condition] to make sorting by title easier
+    @param KVStore store, KVLite store to load data into
+    @param Connection jdbcConnection, connection to use when pulling data using JDBC
+     */
+    public static void loadSortedBooks(KVStore store, Connection jdbcConnection) throws SQLException {
+        Statement jdbcStatement = jdbcConnection.createStatement();
+        //store query results into books
+        ResultSet booksResultSet = jdbcStatement.executeQuery("SELECT id, author, title, edition, condition  FROM Book");
+        while(booksResultSet.next()){
+            String title = booksResultSet.getString(3);
+            String author = "";
+            if(booksResultSet.getString(2) != null){
+                author = booksResultSet.getString(2);
+            }
+            String edition = "";
+            if(booksResultSet.getString(4) !=null){
+                edition = booksResultSet.getString(4);
+            }
+            String condition = "";
+            if(booksResultSet.getString(5) != null){
+                condition = booksResultSet.getString(5);
+            }
+            Key bookKey = Key.createKey(Arrays.asList("book"),
+                    Arrays.asList(title, author, edition, condition));
+            Value bookValue = Value.createValue(new byte[0]);
+            store.put(bookKey, bookValue);
+           // System.out.println(bookKey.toString());
+        }
+    }
+
+
 
     /* loadOwners loads the data from Person using JDBC and then puts the data into KVLite
         @param KVStore store, KVLite store to load data into

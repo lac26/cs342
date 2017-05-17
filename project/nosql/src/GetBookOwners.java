@@ -29,7 +29,7 @@ public class GetBookOwners {
 
 
         //create key that gets all of the actors in movie with id 92616
-        Key actorMajorKey = Key.createKey(Arrays.asList("actor", "92616"));
+        //Key actorMajorKey = Key.createKey(Arrays.asList("actor", "92616"));
 
         String bookId = "2";
 
@@ -39,6 +39,7 @@ public class GetBookOwners {
 
         for (Map.Entry<Key, ValueVersion> field : fields.entrySet()) {
             //to get id of the actor
+            System.out.println(field.getKey().getMajorPath().toString() + "    " + field.getKey().getMinorPath().toString());
             String owner_id = field.getKey().getMinorPath().get(1);
 
             //get the information for the actor
