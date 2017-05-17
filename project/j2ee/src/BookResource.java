@@ -68,6 +68,21 @@ public class BookResource {
         return em.createQuery(em.getCriteriaBuilder().createQuery(BookEntity.class)).getResultList();
     }
 
+    /**
+     * GET all books using the criteria query API.
+     * This could be refactored to use a JPQL query, but this entitymanager-based approach
+     * is consistent with the other handlers.
+     *
+     * @return a list of all group records
+     */
+    @GET
+    @Path("groups")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<SharegroupEntity> getGroups() {
+        return em.createQuery(em.getCriteriaBuilder().createQuery(SharegroupEntity.class)).getResultList();
+    }
+
+
     /*
         DELETE deletes a book by its id
         @param id of the book to delete
@@ -175,11 +190,61 @@ public class BookResource {
             }
         }
         b.setCollections(newBook.getCollections());
-
-
         //myPerson.setTeams(newPerson.getTeams());
         em.persist(b);
         return Response.ok(b, MediaType.APPLICATION_JSON).build();
-
     }
+
+    /**
+     * POST a new Book
+     * @param bookID the book id to add to the group with groupID
+     * @param groupID the id to add the book with bookID
+     * @return a response if update successfull
+     */
+
+    @POST
+    @Path("/group/{groupID}/book/{bookID}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response postBookGroup(@PathParam("bookID") long bookID, @PathParam("groupID") long groupID){
+
+        BookEntity bookFromId = (em.find(BookEntity.class, bookID));
+        SharegroupEntity sharegroupFromId = (em.find(SharegroupEntity.class, groupID));
+
+        //create a list to store all current groups belonging to the book
+        List<SharegroupEntity> currentGroups = bookFromId.getGroups();
+
+        //create a list to store of all current books belonging to the group
+        List<BookEntity> currentBooks = sharegroupFromId.getBooks();
+
+        if ((em.find(SharegroupEntity.class, groupID)) == null) {
+            return Response.serverError().entity("please enter a group that exists").build();
+        }
+        else{
+            if(!currentGroups.contains(sharegroupFromId)) {
+                currentGroups.add(sharegroupFromId);
+                bookFromId.setGroups(currentGroups);
+                em.persist(bookFromId);
+            }
+        }
+
+        if ((em.find(BookEntity.class, bookID)) == null) {
+            return Response.serverError().entity("please enter a book that exists").build();
+        }
+        else{
+            if(!currentBooks.contains(bookFromId)) {
+                currentBooks.add(bookFromId);
+                sharegroupFromId.setBooks(currentBooks);
+                em.persist(sharegroupFromId);
+            }
+        }
+
+        return Response.ok("added book " + bookID + " to group " + groupID).build();
+    }
+
+
 }
+
+
+
+
