@@ -32,4 +32,4 @@ Posts the book with specified id to the group with the specified id.
 
 This information would be useful for the web application development because the Book is one of the key entitites in my database.
 This interface would allow the book to be assigned to a new group or a new collection and would allow a user to 
-delete a book or update information about the book (such as the condition).
+delete a book or update information about the book (such as the condition).  It would also allow the user to easily add a book to a group (and book to a group).
