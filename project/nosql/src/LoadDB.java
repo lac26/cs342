@@ -12,14 +12,14 @@ import java.util.Arrays;
  * Created by lac26 on 5/12/2017.
  * LoadDB pulls data from the OracleXE Book, Person, and PersonBook tables and load it into the Oracle KVLite using a key-value structure
  * Key structure:
- * book/[id]/author/[author name]
- * book/[id]/title/[title name]
- * book/[id]/edition[edition]
- * book/[id]/condition/[condition]
- * book/[title]/[author]/[edition]/[condition] *to make sorting by title easier
- * owner/[id]/[firstname]
- * owner/[id]/[lastname]
- * book/[bookid]/ownerToBook/[ownerID]/[quantity]
+ * book/$id/author/$author_name
+ * book/$id/title/$title
+ * book/$id/edition/$edition
+ * book/$id/condition/$condition
+ * book/$title/$author/$edition/$condition *to make sorting by title easier
+ * owner/$id/$firstname
+ * owner/$id/$lastname
+ * book/$bookid/ownerToBook/$ownerID/$quantity
  */
 public class LoadDB {
 
