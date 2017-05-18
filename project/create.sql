@@ -23,5 +23,5 @@ CONNECT lydia/pass;
 
 
 -- Create the database.
-DEFINE lydia=S:\cs342\project
+DEFINE lydia=C:\Desktop\cs342\project
 @&lydia\load
